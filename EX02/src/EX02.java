@@ -40,9 +40,10 @@ public class EX02 {
 		if( currentDay % BATHING_DAY == 0 ) m = "bathe in sand";
 		if( currentDay % WORM_FEEDING_DAY == 0 && currentDay % BATHING_DAY == 0 ) m = "glide in wind";
 		if( currentDay % WORM_FEEDING_DAY != 0 && currentDay % BATHING_DAY != 0 ) m = "give fruit and water";
-		if( currentDay < 1 ) m = "Can't fly back in time";
-		
+		if( currentDay < 1 ) return "Can't fly back in time";
 		m = "Day " + currentDay + " : " + m;
+		
+		
 		
 		return m;
 	}
