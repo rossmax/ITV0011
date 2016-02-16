@@ -26,7 +26,7 @@ public class EX02 {
 	public static void main(String[] args) {
 			for(int i = 1; i <= NUMBER_OF_DAYS; i++)
 			{	
-				System.out.println("Day :" + i + " " + getInstructionForCurrentDay(i));
+				System.out.println("Day " + i + ": " + getInstructionForCurrentDay(i));
 			}
 	
 	}
@@ -36,8 +36,8 @@ public class EX02 {
 	 */
 	public static String getInstructionForCurrentDay(int currentDay) {
 		String m = "";
-		if( currentDay % WORM_FEEDING_DAY == 0) m = "feed worms";
-		if( currentDay % BATHING_DAY == 0) m = "bathe in sand";
+		if( currentDay % WORM_FEEDING_DAY == 0 ) m = "feed worms";
+		if( currentDay % BATHING_DAY == 0 ) m = "bathe in sand";
 		if( currentDay % WORM_FEEDING_DAY == 0 && currentDay % BATHING_DAY == 0 ) m = "glide in wind";
 		if( currentDay % WORM_FEEDING_DAY != 0 && currentDay % BATHING_DAY != 0 ) m = "give fruit and water";
 		if( currentDay < 1 ) m = "Can't fly back in time";
