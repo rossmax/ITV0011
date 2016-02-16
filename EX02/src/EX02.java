@@ -2,7 +2,7 @@ public class EX02 {
 	
 	/**
 	 * Constant.
-	 * Every 3 days, feed worms.
+	 * Every 3   days, feed worms.
 	 */
 	public static final int WORM_FEEDING_DAY = 3;
 
