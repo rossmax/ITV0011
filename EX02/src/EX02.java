@@ -42,7 +42,7 @@ public class EX02 {
 		if( currentDay % WORM_FEEDING_DAY != 0 && currentDay % BATHING_DAY != 0 ) m = "give fruit and water";
 		if( currentDay < 1 ) m = "Can't fly back in time";
 		
-		m = "Day " + currentDay + ": " + m;
+		m = "Day " + currentDay + " : " + m;
 		
 		return m;
 	}
