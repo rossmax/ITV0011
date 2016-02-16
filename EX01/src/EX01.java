@@ -5,8 +5,8 @@ public class EX01 {
     /**
      * Entry-point of the program.
      * This is here so you can test out your code
-     * with running this program.
-     * @param args Arguments from command-line.
+     * with running this program.  
+     * @param args Arguments from command-line.   
      */
     public static void main(String[] args) {
         System.out.println(getCustomerGreeting("Alice")); // => Hello Alice, nice to see you!
