@@ -59,7 +59,7 @@ public class EX03 {
     	plainText = String.valueOf(myCharArray);
 		plainText = plainText.replaceAll(occurringLetter, "");
 		
-		if (plainText == "") return "";
+		if (plainText.equals("")) return "";
 		else if(plainText == null) return null;
         else return plainText;
     }
@@ -91,7 +91,7 @@ public class EX03 {
     		}
     	}
     	if(occurringLetter == null) return null;
-    	if(occurringLetter == "") return "";
+    	if(occurringLetter.equals("")) return "";
         else return occurringLetter;
     }
  
@@ -122,7 +122,7 @@ public class EX03 {
     	text = text.replaceAll(occurringLetter, "");
 		
     	if(occurringLetter == null) return null;
-    	if(occurringLetter == "") return "";
+    	if(occurringLetter.equals("")) return "";
         else return text;
        
     }
@@ -160,7 +160,7 @@ public class EX03 {
     	cryptoText = String.valueOf(myCharArray);
         
     	if(cryptoText == null) return null;
-        if(cryptoText == "") return "";
+        if(cryptoText.equals("")) return "";
         else return cryptoText;
     }
  
