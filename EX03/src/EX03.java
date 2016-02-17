@@ -20,7 +20,7 @@ public class EX03 {
     		for(int j = 0; j <= letters.length - 1; j++){
     			if(myCharArray [i] == letters [j]){
     				if(j + rotation >= letters.length){
-    		    		myCharArray [i] = letters [j+rotation-letters.length + 1];
+    		    		myCharArray [i] = letters [j + rotation-letters.length];
     		    		break;
     		    		}
     					myCharArray [i] = letters [j+rotation];
@@ -144,7 +144,7 @@ public class EX03 {
     		for(int j = 0; j <= letters.length - 1; j++){
     			if(myCharArray [i] == letters [j]){
     				if(j - rotation <= -1){
-    	    			myCharArray [i] = letters [letters.length - rotation];
+    	    			myCharArray [i] = letters [j - rotation + letters.length];
     	    			break;
     	    			}
     					myCharArray [i] = letters [j - rotation];
