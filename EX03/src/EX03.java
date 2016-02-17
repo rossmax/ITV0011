@@ -63,7 +63,7 @@ public class EX03 {
 		plainText = plainText.replaceAll(occurringLetter, "");
 		
 		if (plainText.equals("")) return "";
-		else if(plainText == null) return null;
+		else if(plainText.equals(null)) return null;
         else return plainText;
     }
 
@@ -93,7 +93,7 @@ public class EX03 {
     		}
     		}
     	}
-    	if(occurringLetter == null) return null;
+    	if(occurringLetter.equals(null)) return null;
     	if(occurringLetter.equals("")) return "";
         else return occurringLetter;
     }
@@ -124,7 +124,7 @@ public class EX03 {
     	}
     	text = text.replaceAll(occurringLetter, "");
 		
-    	if(occurringLetter == null) return null;
+    	if(occurringLetter.equals(null)) return null;
     	if(occurringLetter.equals("")) return "";
         else return text;
        
@@ -162,7 +162,7 @@ public class EX03 {
     	}
     	cryptoText = String.valueOf(myCharArray);
         
-    	if(cryptoText == null) return null;
+    	if(cryptoText.equals(null)) return null;
         if(cryptoText.equals("")) return "";
         else return cryptoText;
     }
@@ -172,7 +172,7 @@ public class EX03 {
      * @param args Arguments from the command line
      */
     public static void main(String[] args) {
-        System.out.println(encrypt("you too Brutus?", 1)); // => zv u csvuvt? 
+        System.out.println(encrypt("YoU too BrutuS?", 1)); // => zv u csvuvt? 
         // (both u and o appear 3 times, o comes earlier in alphabet)
         System.out.println(decrypt("zpv upp csvuvt?", 1)); // => you too brutus?
         System.out.println(findMostFrequentlyOccurringLetter("miks vot ni jahtub?")); // => o
