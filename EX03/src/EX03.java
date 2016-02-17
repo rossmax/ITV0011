@@ -7,7 +7,7 @@ public class EX03 {
      * @param rotation
      * @return encrypted text
      */
-    public static String eencrypt(String plainText, int rotation) {
+    public static String encrypt(String plainText, int rotation) {
     	
     	char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     	boolean hasUppercase = !plainText.equals(plainText.toUpperCase());
@@ -167,34 +167,7 @@ public class EX03 {
         else return cryptoText;
     }
     
-    public static String encrypt(String plainText, int rotation) {
-    	char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    	plainText = plainText.toLowerCase();
-    	char [] myCharArray = plainText.toCharArray ();
 
-    	for(int i = 0; i <= myCharArray.length - 1; i++){
-    		for(int j = 0; j <= letters.length - 1; j++){
-    			if(myCharArray [i] == letters [j]){
-    				if(j + rotation >= letters.length){
-    	    			myCharArray [i] = letters [j - rotation + letters.length];
-    	    			break;
-    	    			}
-    					myCharArray [i] = letters [j + rotation];
-    	    			break;
-    			}
-    			
-    			if(myCharArray [i] == ' '|| myCharArray [i] == '?' ){
-    			myCharArray [i] = myCharArray [i];
-    			break;
-    			}	
-    		}
-    	}
-    	plainText = String.valueOf(myCharArray);
-        
-    	if(plainText.equals(null)) return null;
-        if(plainText.equals("")) return "";
-        else return plainText;
-    }
  
     /**
      * The main method, which is the entry point of the program.
