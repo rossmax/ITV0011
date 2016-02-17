@@ -59,8 +59,8 @@ public class EX03 {
     	plainText = String.valueOf(myCharArray);
 		plainText = plainText.replaceAll(occurringLetter, "");
 		
-		if(plainText == null) return null;
-		if(plainText == "") return "";
+		if (plainText == "") return "";
+		else if(plainText == null) return null;
         else return plainText;
     }
 
