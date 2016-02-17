@@ -174,10 +174,10 @@ public class EX03 {
      * @param args Arguments from the command line
      */
     public static void main(String[] args) {
-        System.out.println(encrypt("YoU too BrutuS?", 1)); // => zv u csvuvt? 
+        System.out.println(encrypt("you too Brutus?", 1)); // => zv u csvuvt? 
         // (both u and o appear 3 times, o comes earlier in alphabet)
         System.out.println(decrypt("zpv upp csvuvt?", 1)); // => you too brutus?
-        System.out.println(findMostFrequentlyOccurringLetter("miks vot ni jahtub?")); // => o
+        System.out.println(findMostFrequentlyOccurringLetter("you too Brutus?")); // => o
         System.out.println(minimizeText("you too Brutus?")); // yu t brutus?
     }
 }
