@@ -10,7 +10,10 @@ public class EX03 {
     public static String encrypt(String plainText, int rotation) {
     	
     	char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    	boolean hasUppercase = !plainText.equals(plainText.toUpperCase());
+    	if(hasUppercase){
     	plainText = plainText.toLowerCase();
+    	}
     	char [] myCharArray = plainText.toCharArray ();
 
 
@@ -172,7 +175,7 @@ public class EX03 {
         System.out.println(encrypt("you too Brutus?", 1)); // => zv u csvuvt? 
         // (both u and o appear 3 times, o comes earlier in alphabet)
         System.out.println(decrypt("zpv upp csvuvt?", 1)); // => you too brutus?
-        System.out.println(findMostFrequentlyOccurringLetter("you too Brutus?")); // => o
+        System.out.println(findMostFrequentlyOccurringLetter("miks vot ni jahtub?")); // => o
         System.out.println(minimizeText("you too Brutus?")); // yu t brutus?
     }
 }
