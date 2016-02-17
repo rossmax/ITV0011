@@ -19,13 +19,13 @@ public class EX03 {
     	for(int i = 0; i <= myCharArray.length - 1; i++){
     		for(int j = 0; j <= letters.length - 1; j++){
     			if(myCharArray [i] == letters [j]){
-    			myCharArray [i] = letters [j+rotation];
-    			break;
-    			}
-    			if(j + rotation >= letters.length){
-    			myCharArray [i] = letters [j+rotation-letters.length + 1];
-    			break;
-    			}
+    				if(j + rotation >= letters.length){
+    		    		myCharArray [i] = letters [j+rotation-letters.length + 1];
+    		    		break;
+    		    		}
+    					myCharArray [i] = letters [j+rotation];
+    					break;
+    				}
     			if(myCharArray [i] == ' '|| myCharArray [i] == '?' ){
     			myCharArray [i] = myCharArray [i];
     			break;
@@ -143,13 +143,14 @@ public class EX03 {
     	for(int i = 0; i <= myCharArray.length - 1; i++){
     		for(int j = 0; j <= letters.length - 1; j++){
     			if(myCharArray [i] == letters [j]){
-    			myCharArray [i] = letters [j - rotation];
-    			break;
+    				if(j - rotation <= -1){
+    	    			myCharArray [i] = letters [letters.length - rotation];
+    	    			break;
+    	    			}
+    					myCharArray [i] = letters [j - rotation];
+    	    			break;
     			}
-    			if(j + rotation >= letters.length){
-    			myCharArray [i] = letters [j - rotation - letters.length + 1];
-    			break;
-    			}
+    			
     			if(myCharArray [i] == ' '|| myCharArray [i] == '?' ){
     			myCharArray [i] = myCharArray [i];
     			break;
