@@ -9,6 +9,10 @@ public class EX03 {
      */
 	public static String encrypt(String plainText, int rotation) {
     	
+		
+		if(plainText == null) return null;
+
+		
     	char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     	boolean hasUppercase = !plainText.equals(plainText.toUpperCase());
     	if(hasUppercase){
@@ -63,7 +67,7 @@ public class EX03 {
 		plainText = plainText.replaceAll(occurringLetter, "");
 		
 		if (plainText.equals("")) return "";
-		else if(plainText.equals(null)) return null;
+		
         else return plainText;
     }
 
@@ -75,6 +79,8 @@ public class EX03 {
      */
     public static String findMostFrequentlyOccurringLetter(String text) {
     
+    	
+    	if(text == null) return null;
     	String occurringLetter = "";
     	int m = 0,n = 0,k = 0;
 
@@ -93,7 +99,7 @@ public class EX03 {
     		}
     		}
     	}
-    	if(occurringLetter.equals(null)) return null;
+    	
     	if(occurringLetter.equals("")) return "";
         else return occurringLetter;
     }
@@ -104,6 +110,8 @@ public class EX03 {
      * @return text in which the most prevalent letter has been removed.
      */
     public static String minimizeText(String text) {
+    	
+    	if(text == null) return null;
     	String occurringLetter = "";
     	int m = 0,n = 0,k = 0;
 
@@ -124,7 +132,7 @@ public class EX03 {
     	}
     	text = text.replaceAll(occurringLetter, "");
 		
-    	if(occurringLetter.equals(null)) return null;
+    	
     	if(occurringLetter.equals("")) return "";
         else return text;
        
@@ -139,6 +147,8 @@ public class EX03 {
      * @return Decrypted text.
      */
     public static String decrypt(String cryptoText, int rotation) {
+    	
+    	if(cryptoText == null) return null;
     	char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     	cryptoText = cryptoText.toLowerCase();
     	char [] myCharArray = cryptoText.toCharArray ();
@@ -162,7 +172,7 @@ public class EX03 {
     	}
     	cryptoText = String.valueOf(myCharArray);
         
-    	if(cryptoText == null) return null;
+    	
         if(cryptoText.equals("")) return "";
         else return cryptoText;
     }
