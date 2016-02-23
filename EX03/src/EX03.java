@@ -68,7 +68,7 @@ public class EX03 {
 		
 		if (plainText.equals("")) return "";
 		
-        else return plainText = plainText.toLowerCase();
+        else return plainText.toLowerCase();
     }
 
  
