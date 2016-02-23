@@ -8,19 +8,12 @@ public class EX03 {
      * @return encrypted text
      */
 	public static String encrypt(String plainText, int rotation) {
-    	
-		
+    		
 		if(plainText == null) return null;
-
 		
     	char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
-    	plainText = plainText.toLowerCase();
-
-    	char [] myCharArray = plainText.toCharArray ();
-
-
-    	
+    	char [] myCharArray = plainText.toCharArray ();  	
     	
     	for(int i = 0; i <= myCharArray.length - 1; i++){
     		for(int j = 0; j <= letters.length - 1; j++){
@@ -38,38 +31,14 @@ public class EX03 {
     			}
         		}
     		}
-		
-    	
-    	
-    	
-        ///////////////////////////////////////////////////////////////////
-    	/*String occurringLetter = "";
-
-    	int m = 0,n = 0,k = 0;
-    	for(int i = 0; i <= myCharArray.length - 1; i++, n = 0){
-    		for(int j = 0; j <= myCharArray.length - 1; j++, m = 0){
-    			if(myCharArray [i] == myCharArray [j]){
-    			m++;
-    			n += m;
-    			}
-    		
-    		if(n >= k){
-    			k += n;
-    			occurringLetter = String.valueOf(myCharArray[i]);	
-    		}
-    		}
-    	}*/
-    	////////////////////////////////////////////////////////////////////
-    	
 
     	plainText = String.valueOf(myCharArray);
     	
 		plainText = plainText.replaceAll(findMostFrequentlyOccurringLetter(plainText), "");
 		
-		//if (plainText.equals("")) return "";
+		if (plainText.equals("")) return "";
 		
-        //else 
-		return plainText.toLowerCase();
+        else return plainText.toLowerCase();
     }
 
  
