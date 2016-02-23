@@ -66,9 +66,10 @@ public class EX03 {
     	
 		plainText = plainText.replaceAll(findMostFrequentlyOccurringLetter(plainText), "");
 		
-		if (plainText.equals("")) return "";
+		//if (plainText.equals("")) return "";
 		
-        else return plainText.toLowerCase();
+        //else 
+		return plainText.toLowerCase();
     }
 
  
