@@ -8,27 +8,19 @@ public class EX03 {
      * @return encrypted text
      */
 	public static String encrypt(String plainText, int rotation) {
-    	
-		int n = 0;
 		
 		if(plainText == null) return null;
-		
 		plainText = plainText.toLowerCase();
-		
     	char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-
     	char [] myCharArray = plainText.toCharArray ();  	
     	
     	for(int i = 0; i <= myCharArray.length - 1; i++){
     		for(int j = 0; j <= letters.length - 1; j++){
     			if(myCharArray [i] == letters [j]){
     				if(j + rotation >= letters.length){
-    					if(rotation >= letters.length){
+    					if(rotation > letters.length){
     						rotation = rotation % letters.length;
-    						myCharArray [i] = letters [j + rotation - letters.length];
-    						break;
-    						}
-    					
+    					}
     		    		myCharArray [i] = letters [j + rotation-letters.length];
     		    		break;
     				}
@@ -39,18 +31,14 @@ public class EX03 {
     			myCharArray [i] = myCharArray [i];
     			break;
         		}
-    	}
+    		}
     	}
     	plainText = String.valueOf(myCharArray);
-    	
 		plainText = plainText.replaceAll(findMostFrequentlyOccurringLetter(plainText), "");
-		
 		if (plainText.equals("")) return "";
-		
         else return plainText;
     }
 
- 
     /**
      * Finds the most frequently occurring letter in text.
      * @param text either plain or encrypted text.
@@ -163,7 +151,7 @@ public class EX03 {
      * @param args Arguments from the command line
      */
     public static void main(String[] args) {
-        System.out.println(encrypt("you too Brutus?", 45)); // => zv u csvuvt? 
+        System.out.println(encrypt("you too Brutus?", 26)); // => zv u csvuvt? 
         // (both u and o appear 3 times, o comes earlier in alphabet)
         System.out.println(decrypt("zpv upp csvuvt?", 1)); // => you too brutus?
         System.out.println(findMostFrequentlyOccurringLetter("you too Brutus?")); // => o
