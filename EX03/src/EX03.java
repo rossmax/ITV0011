@@ -14,10 +14,9 @@ public class EX03 {
 
 		
     	char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    	boolean hasUppercase = !plainText.equals(plainText.toUpperCase());
-    	if(hasUppercase){
+
     	plainText = plainText.toLowerCase();
-    	}
+
     	char [] myCharArray = plainText.toCharArray ();
 
 
@@ -44,7 +43,7 @@ public class EX03 {
     	
     	
         ///////////////////////////////////////////////////////////////////
-    	String occurringLetter = "";
+    	/*String occurringLetter = "";
 
     	int m = 0,n = 0,k = 0;
     	for(int i = 0; i <= myCharArray.length - 1; i++, n = 0){
@@ -59,16 +58,17 @@ public class EX03 {
     			occurringLetter = String.valueOf(myCharArray[i]);	
     		}
     		}
-    	}
+    	}*/
     	////////////////////////////////////////////////////////////////////
     	
 
     	plainText = String.valueOf(myCharArray);
-		plainText = plainText.replaceAll(occurringLetter, "");
+    	
+		plainText = plainText.replaceAll(findMostFrequentlyOccurringLetter(plainText), "");
 		
 		if (plainText.equals("")) return "";
 		
-        else return plainText;
+        else return plainText = plainText.toLowerCase();
     }
 
  
@@ -93,7 +93,7 @@ public class EX03 {
     			n += m;
     			}
     		
-    		if(n >= k){
+    		if(n > k){
     			k += n;
     			occurringLetter = String.valueOf(myCharArray[i]);	
     		}
