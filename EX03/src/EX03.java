@@ -141,7 +141,7 @@ public class EX03 {
     /**
      * Given the initial rotation and the encrypted text, this method
      * decrypts said text.
-     * @param cryptoText Encrypted text.
+     * @param cryptoText Encrypted text.   
      * @param rotation How many letters to the right the alphabet was
      *                 shifted in order to encrypt text.
      * @return Decrypted text.
