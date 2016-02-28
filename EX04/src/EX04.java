@@ -112,7 +112,7 @@ public class EX04 {
      *
      * @param scanner          Input scanner
      * @param matrixParameters Array of user guess information
-     * @return int[] array of guess input parameters
+     * @return int[] array of guess input parameters  
      */
     public static int[] readGuessInput(Scanner scanner, int[] matrixParameters) {
         int[] parameters;
