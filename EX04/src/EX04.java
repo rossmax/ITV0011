@@ -100,7 +100,7 @@ public class EX04 {
     		}
     		matrixTekstikujul += lineChange;
     	}
-    	matrixTekstikujul = matrixTekstikujul.replaceAll("x", ".");
+    	//matrixTekstikujul = matrixTekstikujul.replaceAll("x", ".");
         return matrixTekstikujul;
     }
  
@@ -111,7 +111,7 @@ public class EX04 {
      * Index 0 - row, Index 1 - col
      *
      * @param scanner          Input scanner
-     * @param matrixParameters Array of user guess information  
+     * @param matrixParameters Array of user guess information
      * @return int[] array of guess input parameters  
      */
     public static int[] readGuessInput(Scanner scanner, int[] matrixParameters) {
