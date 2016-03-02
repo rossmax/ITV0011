@@ -4,7 +4,7 @@ import java.util.Scanner;
  * EX04.
  */
 public class EX04 {
-    /** Guess parameter array index for guess ROW value*/
+    /** Guess parameter array index for guess ROW valu   e*/
     public static final int FIELD_ROW = 0;
     /** Guess parameter array index for guess COL value*/
     public static final int FIELD_COL = 1;
@@ -54,7 +54,7 @@ public class EX04 {
                 System.out.println("Lahendus leitud " + totalGuesses + " katsega!");
                 break;
             } else {
-                System.out.printf("Kaugus m�eldud punktist %.2f\n", distance);
+                System.out.printf("Kaugus mõeldud punktist %.2f\n", distance);
             }
         }
 
@@ -100,7 +100,7 @@ public class EX04 {
     		}
     		matrixTekstikujul += lineChange;
     	}
-    	//matrixTekstikujul = matrixTekstikujul.replaceAll("x", ".");
+    	matrixTekstikujul = matrixTekstikujul.replaceAll("x", ".");
         return matrixTekstikujul;
     }
  
@@ -117,7 +117,7 @@ public class EX04 {
     public static int[] readGuessInput(Scanner scanner, int[] matrixParameters) {
         int[] parameters;
         do {
-            System.out.print("Sisestage m�eldav ruut (n�iteks 0,0):");
+            System.out.print("Sisestage mõeldav ruut (näiteks 0,0):");
             String parameterInput = scanner.nextLine();
             parameters = splitInputStructureToIntArray(parameterInput);
         } while (!validateGuessInput(parameters, matrixParameters));
@@ -161,7 +161,7 @@ public class EX04 {
     public static int[] readInitialMatrixParameters(Scanner scanner) {
         int[] parameters;
         do {
-            System.out.print("Sisestage N,M,ROW,COL (n�iteks: 2,2,0,0):");
+            System.out.print("Sisestage N,M,ROW,COL (näiteks: 2,2,0,0):");
             String parameterInput = scanner.nextLine();
             parameters = splitInputStructureToIntArray(parameterInput);
         } while (!validateInitialParameters(parameters));
