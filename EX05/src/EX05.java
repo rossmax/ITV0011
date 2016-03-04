@@ -6,11 +6,29 @@ import java.nio.file.Paths;
 
 import java.util.Scanner;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EX05.
+ */
 public class EX05 {
+    
+    /** The Constant INPUTFile. */
     public static final String INPUTFile  = "Movies.txt";
+    
+    /** The Constant OUTPUTFile. */
     public static final String OUTPUTFile = "OutputMovies.txt";
+    
+    /** The MOVIES list. */
     public static String       MOVIESList = "";
 
+    /**
+     * Convert.
+     *
+     * @param inputFile the input file
+     * @param outputFile the output file
+     * @return the int
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static int convert(String inputFile, String outputFile) throws IOException {
         String  ret     = "";
         int     c       = 0;
@@ -35,6 +53,12 @@ public class EX05 {
         return c;
     }
 
+    /**
+     * The main method.
+     *
+     * @param args the arguments
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static void main(String[] args) throws IOException {
         System.out.println(getNicelyFormattedMovie("tere|"));    // null
         convert(INPUTFile, OUTPUTFile);
@@ -49,6 +73,13 @@ public class EX05 {
          */
     }
 
+    /**
+     * Gets the nicely formatted movie.
+     *
+     * @param movieLine the movie line
+     * @return the nicely formatted movie
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public static String getNicelyFormattedMovie(String movieLine) throws IOException {
         String ret = "";
 
