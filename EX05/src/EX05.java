@@ -111,7 +111,7 @@ public class EX05 {
       return null;
     }
     if (movieLine == "") {
-      return "";
+      return null;
     }
 
     String ret = "";
