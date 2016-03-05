@@ -20,11 +20,11 @@ public class EX05 {
 
   /** The MOVIES list. */
   public static String moviesLIST = "";
-  
-  /** The min length. */
+ 
+  /** The minimum length of array. */
   public static int minLength = 3;
-  
-  /** The new line. */
+
+  /** The new line begins after 4 array elements. */
   public static int  newLine = 4;
 
   /**
