@@ -25,6 +25,18 @@ public class EX05 {
 
   /** The new line begins after 4 array elements. */
   public static final int NEWLINE = 4;
+  
+  /** The Constant name index of array. */
+  public static int nameINDEX = 1;
+
+  /** The Constant data index of array. */
+  public static int dataINDEX = 0;
+
+  /** The Constant description index of array. */
+  public static int descINDEX = 2;
+
+  /** The Constant rating index of array. */
+  public static int ratINDEX = 3;
 
   /**
    * Convert.
@@ -101,30 +113,25 @@ public class EX05 {
       retAll[j + 1] = saveLine;
     }
 
-    int name = 1;
-    int data = 0;
-    int desc = 2;
-    int rat = 3;
-
     for (int i = 0; i < retAll.length; i++) {
-      if (i == name) {
+      if (i == nameINDEX) {
         ret += "Release Date: " + retAll[i] + "\n";
-        name += NEWLINE;
+        nameINDEX += NEWLINE;
       }
 
-      if (i == data) {
+      if (i == dataINDEX) {
         ret += retAll[i] + "\n";
-        data += NEWLINE;
+        dataINDEX += NEWLINE;
       }
 
-      if (i == desc) {
+      if (i == descINDEX) {
         ret += "Description: " + retAll[i] + "\n";
-        desc += NEWLINE;
+        descINDEX += NEWLINE;
       }
 
-      if (i == rat) {
+      if (i == ratINDEX) {
         ret += "Average Rating: " + retAll[i] + "\n\n";
-        rat += NEWLINE;
+        ratINDEX += NEWLINE;
       }
     }
 
