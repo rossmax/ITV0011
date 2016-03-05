@@ -47,14 +47,16 @@ public class EX05 {
   public static void main(String[] args) throws IOException {
     System.out.println(getNicelyFormattedMovie("tere|")); // null
     //convert(INPUTFILE, OUTPUTFILE);
-    System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
+    //System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
+    System.out.println(getNicelyFormattedMovie(""));
+    //System.out.println(convert(INPUTFILE, OUTPUTFILE));
     //System.out.println(getNicelyFormattedMovie(moviesLIST));
 
     /*
-     * Movie1 
-     * Release date: 24/02/2016 
-     * Description: description 
-     * Average rating: 8.0 
+     * Movie1
+     * Release date: 24/02/2016
+     * Description: description
+     * Average rating: 8.0
      * <- no new line in the end
      */
   }
@@ -74,7 +76,7 @@ public class EX05 {
     }
 
     String ret = "";
-    int countFilms = 1;
+    int countFilms = 0;
     Path path = Paths.get(inputFile);
     Scanner scanner = new Scanner(path);
 
@@ -104,6 +106,14 @@ public class EX05 {
    * @throws IOException Signals that an I/O exception has occurred.
    */
   public static String getNicelyFormattedMovie(String movieLine) throws IOException {
+
+    if (movieLine == null) {
+      return null;
+    }
+    if (movieLine == "") {
+      return "";
+    }
+
     String ret = "";
     movieLine = movieLine.replaceAll("\n", "|");
 
