@@ -21,10 +21,10 @@ public class EX05 {
   public static String moviesLIST = "";
 
   /** The minimum length of array. */
-  public static final int minLength = 3;
+  public static final int MINLENGHT = 3;
 
   /** The new line begins after 4 array elements. */
-  public static final int newLine = 4;
+  public static final int NEWLINE = 4;
 
   /**
    * Convert.
@@ -89,11 +89,11 @@ public class EX05 {
 
     String[] retAll = movieLine.split("\\|");
 
-    if (retAll.length < minLength) {
+    if (retAll.length < MINLENGHT) {
       return null;
     }
 
-    for (int j = 0; j < retAll.length; j += newLine) {
+    for (int j = 0; j < retAll.length; j += NEWLINE) {
       String saveLine;
 
       saveLine = retAll[j];
@@ -109,22 +109,22 @@ public class EX05 {
     for (int i = 0; i < retAll.length; i++) {
       if (i == name) {
         ret += "Release Date: " + retAll[i] + "\n";
-        name += newLine;
+        name += NEWLINE;
       }
 
       if (i == data) {
         ret += retAll[i] + "\n";
-        data += newLine;
+        data += NEWLINE;
       }
 
       if (i == desc) {
         ret += "Description: " + retAll[i] + "\n";
-        desc += newLine;
+        desc += NEWLINE;
       }
 
       if (i == rat) {
         ret += "Average Rating: " + retAll[i] + "\n\n";
-        rat += newLine;
+        rat += NEWLINE;
       }
     }
 
