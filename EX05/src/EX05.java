@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class EX05 {
 
   /** The Constant INPUTFile. */
-  public static final String INPUTFILE = "Movies.txt";
+  public static final String INPUTFILE = "Test.txt";
 
   /** The Constant OUTPUTFile. */
   public static final String OUTPUTFILE = "OutputMovies.txt";
@@ -51,8 +51,11 @@ public class EX05 {
     //System.out.println(getNicelyFormattedMovie(moviesLIST));
 
     /*
-     * Movie1 Release date: 24/02/2016 Description: description Average rating: 8.0 <- no new line
-     * in the end
+     * Movie1 
+     * Release date: 24/02/2016 
+     * Description: description 
+     * Average rating: 8.0 
+     * <- no new line in the end
      */
   }
 
@@ -65,6 +68,11 @@ public class EX05 {
    * @throws IOException Signals that an I/O exception has occurred.
    */
   public static int convert(String inputFile, String outputFile) throws IOException {
+
+    if (inputFile == null || inputFile == "") {
+      return 0;
+    }
+
     String ret = "";
     int countFilms = 1;
     Path path = Paths.get(inputFile);
