@@ -25,7 +25,7 @@ public class EX05 {
 
   /** The new line begins after 4 array elements. */
   public static final int NEWLINE = 4;
-  
+
   /** The Constant name index of array. */
   public static int nameINDEX = 1;
 
@@ -36,7 +36,7 @@ public class EX05 {
   public static int descINDEX = 2;
 
   /** The Constant rating index of array. */
-  public static int ratINDEX = 3;
+  public static int ratIndex = 3;
 
   /**
    * Convert.
@@ -129,9 +129,9 @@ public class EX05 {
         descINDEX += NEWLINE;
       }
 
-      if (i == ratINDEX) {
+      if (i == ratIndex) {
         ret += "Average Rating: " + retAll[i] + "\n\n";
-        ratINDEX += NEWLINE;
+        ratIndex += NEWLINE;
       }
     }
 
