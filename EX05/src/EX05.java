@@ -6,7 +6,6 @@ import java.nio.file.Paths;
 
 import java.util.Scanner;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class EX05.
  */
@@ -20,12 +19,12 @@ public class EX05 {
 
   /** The MOVIES list. */
   public static String moviesLIST = "";
- 
+
   /** The minimum length of array. */
-  public static int minLength = 3;
+  public static final int minLength = 3;
 
   /** The new line begins after 4 array elements. */
-  public static int  newLine = 4;
+  public static final int newLine = 4;
 
   /**
    * Convert.
