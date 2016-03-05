@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 
 import java.util.Scanner;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class EX05.
  */
@@ -18,7 +19,13 @@ public class EX05 {
   public static final String OUTPUTFILE = "OutputMovies.txt";
 
   /** The MOVIES list. */
-  public static String MOVIESLIST = "";
+  public static String moviesLIST = "";
+  
+  /** The min length. */
+  public static int minLength = 3;
+  
+  /** The new line. */
+  public static int  newLine = 4;
 
   /**
    * Convert.
@@ -42,11 +49,11 @@ public class EX05 {
     }
 
     scanner.close();
-    MOVIESLIST += ret;
+    moviesLIST += ret;
 
     FileWriter writer2 = new FileWriter(outputFile);
 
-    writer2.write("" + getNicelyFormattedMovie(MOVIESLIST));
+    writer2.write("" + getNicelyFormattedMovie(moviesLIST));
     writer2.close();
 
     return countFilms;
@@ -62,7 +69,7 @@ public class EX05 {
     System.out.println(getNicelyFormattedMovie("tere|")); // null
     convert(INPUTFILE, OUTPUTFILE);
     System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
-    System.out.println(getNicelyFormattedMovie(MOVIESLIST));
+    System.out.println(getNicelyFormattedMovie(moviesLIST));
 
     /*
      * Movie1 Release date: 24/02/2016 Description: description Average rating: 8.0 <- no new line
@@ -79,8 +86,6 @@ public class EX05 {
    */
   public static String getNicelyFormattedMovie(String movieLine) throws IOException {
     String ret = "";
-    int minLength = 3;
-    int  newLine = 4;
     movieLine = movieLine.replaceAll("\n", "|");
 
     String[] retAll = movieLine.split("\\|");
