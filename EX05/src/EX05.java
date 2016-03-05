@@ -12,13 +12,13 @@ import java.util.Scanner;
 public class EX05 {
 
   /** The Constant INPUTFile. */
-  public static final String INPUTFile = "Movies.txt";
+  public static final String INPUTFILE = "Movies.txt";
 
   /** The Constant OUTPUTFile. */
-  public static final String OUTPUTFile = "OutputMovies.txt";
+  public static final String OUTPUTFILE = "OutputMovies.txt";
 
   /** The MOVIES list. */
-  public static String MOVIESList = "";
+  public static String MOVIESLIST = "";
 
   /**
    * Convert.
@@ -30,7 +30,7 @@ public class EX05 {
    */
   public static int convert(String inputFile, String outputFile) throws IOException {
     String ret = "";
-    int c = 0;
+    int countFilms = 1;
     Path path = Paths.get(inputFile);
     Scanner scanner = new Scanner(path);
 
@@ -38,18 +38,18 @@ public class EX05 {
 
       // "\n" -> newline
       ret += scanner.nextLine() + "\n";
-      c++;
+      countFilms++;
     }
 
     scanner.close();
-    MOVIESList += ret;
+    MOVIESLIST += ret;
 
     FileWriter writer2 = new FileWriter(outputFile);
 
-    writer2.write("" + getNicelyFormattedMovie(MOVIESList));
+    writer2.write("" + getNicelyFormattedMovie(MOVIESLIST));
     writer2.close();
 
-    return c;
+    return countFilms;
   }
 
   /**
@@ -60,9 +60,9 @@ public class EX05 {
    */
   public static void main(String[] args) throws IOException {
     System.out.println(getNicelyFormattedMovie("tere|")); // null
-    convert(INPUTFile, OUTPUTFile);
+    convert(INPUTFILE, OUTPUTFILE);
     System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
-    System.out.println(getNicelyFormattedMovie(MOVIESList));
+    System.out.println(getNicelyFormattedMovie(MOVIESLIST));
 
     /*
      * Movie1 Release date: 24/02/2016 Description: description Average rating: 8.0 <- no new line
@@ -79,16 +79,17 @@ public class EX05 {
    */
   public static String getNicelyFormattedMovie(String movieLine) throws IOException {
     String ret = "";
-
+    int minLength = 3;
+    int  newLine = 4;
     movieLine = movieLine.replaceAll("\n", "|");
 
     String[] retAll = movieLine.split("\\|");
 
-    if (retAll.length < 3) {
+    if (retAll.length < minLength) {
       return null;
     }
 
-    for (int j = 0; j < retAll.length; j += 4) {
+    for (int j = 0; j < retAll.length; j += newLine) {
       String saveLine;
 
       saveLine = retAll[j];
@@ -99,27 +100,27 @@ public class EX05 {
     int name = 1;
     int data = 0;
     int desc = 2;
-    int rat = 3;  
-    
+    int rat = 3;
+
     for (int i = 0; i < retAll.length; i++) {
       if (i == name) {
         ret += "Release Date: " + retAll[i] + "\n";
-        name += 4;
+        name += newLine;
       }
 
       if (i == data) {
         ret += retAll[i] + "\n";
-        data += 4;
+        data += newLine;
       }
 
       if (i == desc) {
         ret += "Description: " + retAll[i] + "\n";
-        desc += 4;
+        desc += newLine;
       }
 
       if (i == rat) {
         ret += "Average Rating: " + retAll[i] + "\n\n";
-        rat += 4;
+        rat += newLine;
       }
     }
 
