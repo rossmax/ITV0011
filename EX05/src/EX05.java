@@ -39,6 +39,24 @@ public class EX05 {
   public static int ratIndex = 3;
 
   /**
+   * The main method.
+   *
+   * @param args the arguments
+   * @throws IOException Signals that an I/O exception has occurred.
+   */
+  public static void main(String[] args) throws IOException {
+    System.out.println(getNicelyFormattedMovie("tere|")); // null
+    //convert(INPUTFILE, OUTPUTFILE);
+    System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
+    //System.out.println(getNicelyFormattedMovie(moviesLIST));
+
+    /*
+     * Movie1 Release date: 24/02/2016 Description: description Average rating: 8.0 <- no new line
+     * in the end
+     */
+  }
+
+  /**
    * Convert.
    *
    * @param inputFile the input file
@@ -68,24 +86,6 @@ public class EX05 {
     writer2.close();
 
     return countFilms;
-  }
-
-  /**
-   * The main method.
-   *
-   * @param args the arguments
-   * @throws IOException Signals that an I/O exception has occurred.
-   */
-  public static void main(String[] args) throws IOException {
-    System.out.println(getNicelyFormattedMovie("tere|")); // null
-    convert(INPUTFILE, OUTPUTFILE);
-    System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
-    System.out.println(getNicelyFormattedMovie(moviesLIST));
-
-    /*
-     * Movie1 Release date: 24/02/2016 Description: description Average rating: 8.0 <- no new line
-     * in the end
-     */
   }
 
   /**
