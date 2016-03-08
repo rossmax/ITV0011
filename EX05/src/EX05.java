@@ -33,19 +33,23 @@ public class EX05 {
    * @throws IOException Signals that an I/O exception has occurred.
    */
   public static void main(String[] args) throws IOException {
+    
     System.out.println(getNicelyFormattedMovie("tere|")); // null
 
     System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
 
 
     //convert(INPUTFILE, OUTPUTFILE);
+    
     //System.out.println(moviesLIST);
 
     // System.out.println(convert(INPUTFILE, OUTPUTFILE));
     // System.out.println(getNicelyFormattedMovie(moviesLIST));
 
     /*
-     * Movie1 Release date: 24/02/2016 Description: description Average rating: 8.0 <- no new line
+     * Movie1 Release date: 24/02/2016 
+     * Description: description 
+     * Average rating: 8.0 <- no new line
      * in the end
      */
   }
@@ -71,7 +75,7 @@ public class EX05 {
 
     while (scanner.hasNextLine()) {
 
-      moviesLIST += getNicelyFormattedMovie(scanner.nextLine()) + "\n";
+      moviesLIST += getNicelyFormattedMovie(scanner.nextLine()) + "\n\n";
 
       FileWriter writer2 = new FileWriter(outputFile);
 
@@ -139,7 +143,7 @@ public class EX05 {
       }
 
       if (i == ratIndex) {
-        ret += "Average Rating: " + retAll[i] + "\n\n";
+        ret += "Average Rating: " + retAll[i];
         // ratIndex += NEWLINE;
       }
     }
