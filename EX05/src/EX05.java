@@ -26,18 +26,6 @@ public class EX05 {
   /** The new line begins after 4 array elements. */
   public static final int NEWLINE = 4;
 
-  /** The Constant name index of array. */
-  public static int nameINDEX = 1;
-
-  /** The Constant data index of array. */
-  public static int dataINDEX = 0;
-
-  /** The Constant description index of array. */
-  public static int descINDEX = 2;
-
-  /** The Constant rating index of array. */
-  public static int ratIndex = 3;
-
   /**
    * The main method.
    *
@@ -46,18 +34,19 @@ public class EX05 {
    */
   public static void main(String[] args) throws IOException {
     System.out.println(getNicelyFormattedMovie("tere|")); // null
-    //convert(INPUTFILE, OUTPUTFILE);
-    //System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
-    System.out.println(getNicelyFormattedMovie(""));
-    //System.out.println(convert(INPUTFILE, OUTPUTFILE));
-    //System.out.println(getNicelyFormattedMovie(moviesLIST));
+
+    System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
+
+
+    convert(INPUTFILE, OUTPUTFILE);
+    System.out.println(moviesLIST);
+
+    // System.out.println(convert(INPUTFILE, OUTPUTFILE));
+    // System.out.println(getNicelyFormattedMovie(moviesLIST));
 
     /*
-     * Movie1
-     * Release date: 24/02/2016
-     * Description: description
-     * Average rating: 8.0
-     * <- no new line in the end
+     * Movie1 Release date: 24/02/2016 Description: description Average rating: 8.0 <- no new line
+     * in the end
      */
   }
 
@@ -75,25 +64,25 @@ public class EX05 {
       return 0;
     }
 
-    String ret = "";
+
     int countFilms = 0;
     Path path = Paths.get(inputFile);
     Scanner scanner = new Scanner(path);
 
     while (scanner.hasNextLine()) {
 
-      // "\n" -> newline
-      ret += scanner.nextLine() + "\n";
+      moviesLIST += getNicelyFormattedMovie(scanner.nextLine()) + "\n";
+
+      FileWriter writer2 = new FileWriter(outputFile);
+
+      writer2.write("" + moviesLIST);
+      writer2.close();
+
       countFilms++;
     }
 
     scanner.close();
-    moviesLIST += ret;
 
-    FileWriter writer2 = new FileWriter(outputFile);
-
-    writer2.write("" + getNicelyFormattedMovie(moviesLIST));
-    writer2.close();
 
     return countFilms;
   }
@@ -106,6 +95,11 @@ public class EX05 {
    * @throws IOException Signals that an I/O exception has occurred.
    */
   public static String getNicelyFormattedMovie(String movieLine) throws IOException {
+    
+    int nameIndex = 1;
+    int dataIndex = 0;
+    int descIndex = 2;
+    int ratIndex = 3;
 
     if (movieLine == null) {
       return null;
@@ -115,7 +109,7 @@ public class EX05 {
     }
 
     String ret = "";
-    movieLine = movieLine.replaceAll("\n", "|");
+    // movieLine = movieLine.replaceAll("|", "|");
 
     String[] retAll = movieLine.split("\\|");
 
@@ -123,33 +117,30 @@ public class EX05 {
       return null;
     }
 
-    for (int j = 0; j < retAll.length; j += NEWLINE) {
-      String saveLine;
-
-      saveLine = retAll[j];
-      retAll[j] = retAll[j + 1];
-      retAll[j + 1] = saveLine;
-    }
+    String saveLine;
+    saveLine = retAll[0];
+    retAll[0] = retAll[1];
+    retAll[1] = saveLine;
 
     for (int i = 0; i < retAll.length; i++) {
-      if (i == nameINDEX) {
+      if (i == nameIndex) {
         ret += "Release Date: " + retAll[i] + "\n";
-        nameINDEX += NEWLINE;
+        // nameIndex += NEWLINE;
       }
 
-      if (i == dataINDEX) {
+      if (i == dataIndex) {
         ret += retAll[i] + "\n";
-        dataINDEX += NEWLINE;
+        // dataIndex += NEWLINE;
       }
 
-      if (i == descINDEX) {
+      if (i == descIndex) {
         ret += "Description: " + retAll[i] + "\n";
-        descINDEX += NEWLINE;
+        // descIndex += NEWLINE;
       }
 
       if (i == ratIndex) {
         ret += "Average Rating: " + retAll[i] + "\n\n";
-        ratIndex += NEWLINE;
+        // ratIndex += NEWLINE;
       }
     }
 
