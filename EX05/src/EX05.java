@@ -38,8 +38,8 @@ public class EX05 {
     System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
 
 
-    convert(INPUTFILE, OUTPUTFILE);
-    System.out.println(moviesLIST);
+    //convert(INPUTFILE, OUTPUTFILE);
+    //System.out.println(moviesLIST);
 
     // System.out.println(convert(INPUTFILE, OUTPUTFILE));
     // System.out.println(getNicelyFormattedMovie(moviesLIST));
