@@ -72,18 +72,16 @@ public class EX05 {
     int countFilms = 0;
     Path path = Paths.get(inputFile);
     Scanner scanner = new Scanner(path);
+    FileWriter writer2 = new FileWriter(outputFile);
 
     while (scanner.hasNextLine()) {
 
-      moviesLIST += getNicelyFormattedMovie(scanner.nextLine()) + "\n\n";
-
-      FileWriter writer2 = new FileWriter(outputFile);
-
-      writer2.write("" + moviesLIST);
-      writer2.close();
-
+      writer2.write("" + getNicelyFormattedMovie(scanner.nextLine()) + "\n\n");
+      
       countFilms++;
     }
+    
+    writer2.close();
 
     scanner.close();
 
@@ -142,7 +140,6 @@ public class EX05 {
         ret += "Average Rating: " + retAll[i];
       }
     }
-
     return ret;
   }
 }
