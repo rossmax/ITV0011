@@ -39,7 +39,7 @@ public class EX05 {
     System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
 
 
-    //convert(INPUTFILE, OUTPUTFILE);
+    convert(INPUTFILE, OUTPUTFILE);
     
     //System.out.println(moviesLIST);
 
@@ -100,26 +100,25 @@ public class EX05 {
    */
   public static String getNicelyFormattedMovie(String movieLine) throws IOException {
     
-    int nameIndex = 1;
-    int dataIndex = 0;
-    int descIndex = 2;
-    int ratIndex = 3;
-
     if (movieLine == null) {
       return null;
     }
     if (movieLine == "") {
       return null;
     }
-
-    String ret = "";
-    // movieLine = movieLine.replaceAll("|", "|");
-
+    
     String[] retAll = movieLine.split("\\|");
-
+    
     if (retAll.length < MINLENGHT) {
       return null;
     }
+
+    int nameIndex = 1;
+    int dataIndex = 0;
+    int descIndex = 2;
+    int ratIndex = 3;
+
+    String ret = "";
 
     String saveLine;
     saveLine = retAll[0];
@@ -129,22 +128,18 @@ public class EX05 {
     for (int i = 0; i < retAll.length; i++) {
       if (i == nameIndex) {
         ret += "Release Date: " + retAll[i] + "\n";
-        // nameIndex += NEWLINE;
       }
 
       if (i == dataIndex) {
         ret += retAll[i] + "\n";
-        // dataIndex += NEWLINE;
       }
 
       if (i == descIndex) {
         ret += "Description: " + retAll[i] + "\n";
-        // descIndex += NEWLINE;
       }
 
       if (i == ratIndex) {
         ret += "Average Rating: " + retAll[i];
-        // ratIndex += NEWLINE;
       }
     }
 
