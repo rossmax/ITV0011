@@ -38,7 +38,6 @@ public class EX05 {
 
     System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
 
-
     convert(INPUTFILE, OUTPUTFILE);
     
     //System.out.println(moviesLIST);
@@ -68,23 +67,21 @@ public class EX05 {
       return 0;
     }
 
-
     int countFilms = 0;
     Path path = Paths.get(inputFile);
     Scanner scanner = new Scanner(path);
     FileWriter writer2 = new FileWriter(outputFile);
 
-    while (scanner.hasNextLine()) {
-
-      writer2.write("" + getNicelyFormattedMovie(scanner.nextLine()) + "\n\n");
-      
+    while  (scanner.hasNextLine())  {
+      writer2.write("" + getNicelyFormattedMovie(scanner.nextLine())); 
+      if  (scanner.hasNext() == true) {
+        writer2.write("\n\n");
+      }
       countFilms++;
     }
-    
+ 
     writer2.close();
-
     scanner.close();
-
 
     return countFilms;
   }
@@ -111,11 +108,6 @@ public class EX05 {
       return null;
     }
 
-    int nameIndex = 1;
-    int dataIndex = 0;
-    int descIndex = 2;
-    int ratIndex = 3;
-
     String ret = "";
 
     String saveLine;
@@ -124,19 +116,19 @@ public class EX05 {
     retAll[1] = saveLine;
 
     for (int i = 0; i < retAll.length; i++) {
-      if (i == nameIndex) {
+      if  (i == 1)  {
         ret += "Release Date: " + retAll[i] + "\n";
       }
 
-      if (i == dataIndex) {
+      if (i == 0)  {
         ret += retAll[i] + "\n";
       }
 
-      if (i == descIndex) {
+      if (i == 2) {
         ret += "Description: " + retAll[i] + "\n";
       }
 
-      if (i == ratIndex) {
+      if (i == 3) {
         ret += "Average Rating: " + retAll[i];
       }
     }
