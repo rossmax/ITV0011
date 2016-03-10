@@ -5,6 +5,8 @@ public class BankAccount {
 
   /** The balance. */
   private double balance;
+  
+  public static final double PAYFORTRANSFER = 0.01;
 
   /**
    * Adds the money.
@@ -23,14 +25,14 @@ public class BankAccount {
    * @return true, if successful
    */
   public boolean transferMoneyTo(BankAccount targetAccount, double amount) {
-    if (balance < amount + (0.01 * amount)) {
+    if (balance < amount + (PAYFORTRANSFER * amount)) {
       return false; // System.out.println("Not enough money for transfer");
     }
 
     if (targetAccount == null) {
       return false; // System.out.println("This bank account does not exist");
     } else {
-      balance -= amount + (0.01 * amount);
+      balance -= amount + (PAYFORTRANSFER * amount);
       targetAccount.balance += amount;
       return true;
     }
