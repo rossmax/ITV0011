@@ -1,5 +1,4 @@
 import java.io.FileWriter;
-import java.lang.Object;
 import java.io.IOException;
 
 import java.nio.file.Path;
@@ -7,6 +6,7 @@ import java.nio.file.Paths;
 
 import java.util.Scanner;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class EX05.
  */
@@ -26,6 +26,18 @@ public class EX05 {
 
   /** The new line begins after 4 array elements. */
   public static final int NEWLINE = 4;
+  
+  /** The Constant DATAINDEX. */
+  public static final int DATAINDEX = 1;
+  
+  /** The Constant NAMEINDEX. */
+  public static final int NAMEINDEX = 0;
+  
+  /** The Constant DESCINDEX. */
+  public static final int DESCINDEX = 2;
+  
+  /** The Constant RATINDEX. */
+  public static final int RATINDEX = 3;
 
   /**
    * The main method.
@@ -34,13 +46,13 @@ public class EX05 {
    * @throws IOException Signals that an I/O exception has occurred.
    */
   public static void main(String[] args) throws IOException {
-    
+
     System.out.println(getNicelyFormattedMovie("tere|")); // null
 
     System.out.println(getNicelyFormattedMovie("2016-02-24|Movie1|description|8.0"));
 
     convert(INPUTFILE, OUTPUTFILE);
-    
+
     //System.out.println(moviesLIST);
 
     // System.out.println(convert(INPUTFILE, OUTPUTFILE));
@@ -80,7 +92,7 @@ public class EX05 {
       }
       countFilms++;
     }
- 
+
     writer2.close();
     scanner.close();
 
@@ -95,16 +107,16 @@ public class EX05 {
    * @throws IOException Signals that an I/O exception has occurred.
    */
   public static String getNicelyFormattedMovie(String movieLine) throws IOException {
-    
+
     if (movieLine == null) {
       return null;
     }
     if (movieLine == "") {
       return null;
     }
-    
+
     String[] retAll = movieLine.split("\\|");
-    
+
     if (retAll.length < MINLENGHT) {
       return null;
     }
@@ -117,27 +129,28 @@ public class EX05 {
     retAll[1] = saveLine;
 
     for (int i = 0; i < retAll.length; i++) {
-      if  (i == 1)  {
-         String newDataForm[];
-         String saveData ;
+      if  (i == DATAINDEX)  {
+        String[] newDataForm;
+        String saveData ;
         retAll[i] = retAll[i].replaceAll("-", "/");
         newDataForm = retAll[i].split("/");
         saveData = newDataForm[0];
         newDataForm[0] = newDataForm[2];
         newDataForm[2] = saveData;
-        
-        ret += "Release date: "+ newDataForm[0] + "/" + newDataForm[1]  + "/" + newDataForm[2] + "\n";
+ 
+        ret += "Release date: " + newDataForm[0] + "/";
+        ret += newDataForm[1]  + "/" + newDataForm[2] + "\n";
       }
 
-      if (i == 0)  {
+      if (i == NAMEINDEX)  {
         ret += retAll[i] + "\n";
       }
 
-      if (i == 2) {
+      if (i == DESCINDEX) {
         ret += "Description: " + retAll[i] + "\n";
       }
 
-      if (i == 3) {
+      if (i == RATINDEX) {
         ret += "Average rating: " + retAll[i];
       }
     }
