@@ -134,7 +134,7 @@ public class EX05 {
       }
 
       if (i == 2) {
-        ret += "Description " + retAll[i] + "\n";
+        ret += "Description: " + retAll[i] + "\n";
       }
 
       if (i == 3) {
