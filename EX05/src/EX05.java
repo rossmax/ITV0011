@@ -1,4 +1,5 @@
 import java.io.FileWriter;
+import java.lang.Object;
 import java.io.IOException;
 
 import java.nio.file.Path;
@@ -117,8 +118,15 @@ public class EX05 {
 
     for (int i = 0; i < retAll.length; i++) {
       if  (i == 1)  {
+         String newDataForm[];
+         String saveData ;
         retAll[i] = retAll[i].replaceAll("-", "/");
-        ret += "Release date: " + retAll[i] + "\n";
+        newDataForm = retAll[i].split("/");
+        saveData = newDataForm[0];
+        newDataForm[0] = newDataForm[2];
+        newDataForm[2] = saveData;
+        
+        ret += "Release date: "+ newDataForm[0] + "/" + newDataForm[1]  + "/" + newDataForm[2] + "\n";
       }
 
       if (i == 0)  {
