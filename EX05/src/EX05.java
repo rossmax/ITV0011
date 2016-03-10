@@ -55,7 +55,7 @@ public class EX05 {
 
     //System.out.println(moviesLIST);
 
-    // System.out.println(convert(INPUTFILE, OUTPUTFILE));
+    // System.out.println(convert(NPUTFILE, OUTPUTFILE));
     // System.out.println(getNicelyFormattedMovie(moviesLIST));
 
     /*
