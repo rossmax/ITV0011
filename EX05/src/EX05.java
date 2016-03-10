@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 import java.util.Scanner;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class EX05.
  */
@@ -26,16 +26,16 @@ public class EX05 {
 
   /** The new line begins after 4 array elements. */
   public static final int NEWLINE = 4;
-  
+
   /** The Constant DATAINDEX. */
   public static final int DATAINDEX = 1;
-  
+
   /** The Constant NAMEINDEX. */
   public static final int NAMEINDEX = 0;
-  
+
   /** The Constant DESCINDEX. */
   public static final int DESCINDEX = 2;
-  
+
   /** The Constant RATINDEX. */
   public static final int RATINDEX = 3;
 
@@ -59,8 +59,8 @@ public class EX05 {
     // System.out.println(getNicelyFormattedMovie(moviesLIST));
 
     /*
-     * Movie1 Release date: 24/02/2016 
-     * Description: description 
+     * Movie1 Release date: 24/02/2016
+     * Description: description
      * Average rating: 8.0 <- no new line
      * in the end
      */
@@ -86,8 +86,8 @@ public class EX05 {
     FileWriter writer2 = new FileWriter(outputFile);
 
     while  (scanner.hasNextLine())  {
-      writer2.write("" + getNicelyFormattedMovie(scanner.nextLine())); 
-      if  (scanner.hasNext() == true) {
+      writer2.write("" + getNicelyFormattedMovie(scanner.nextLine()));
+      if (scanner.hasNext() == true) {
         writer2.write("\n\n");
       }
       countFilms++;
@@ -131,13 +131,13 @@ public class EX05 {
     for (int i = 0; i < retAll.length; i++) {
       if  (i == DATAINDEX)  {
         String[] newDataForm;
-        String saveData ;
+        String saveData;
         retAll[i] = retAll[i].replaceAll("-", "/");
         newDataForm = retAll[i].split("/");
         saveData = newDataForm[0];
         newDataForm[0] = newDataForm[2];
         newDataForm[2] = saveData;
- 
+
         ret += "Release date: " + newDataForm[0] + "/";
         ret += newDataForm[1]  + "/" + newDataForm[2] + "\n";
       }
