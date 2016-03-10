@@ -87,7 +87,7 @@ public class EX05 {
 
     while  (scanner.hasNextLine())  {
       writer2.write("" + getNicelyFormattedMovie(scanner.nextLine()));
-      if (scanner.hasNext() == true) {
+      if (scanner.hasNext()) {
         writer2.write("\n\n");
       }
       countFilms++;
