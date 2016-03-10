@@ -90,7 +90,7 @@ public class EX05 {
   /**
    * Gets the nicely formatted movie.
    *
-   * @param movieLine the movie line
+   * @param  movieLine  the  movie line
    * @return the nicely formatted movie
    * @throws IOException Signals that an I/O exception has occurred.
    */
