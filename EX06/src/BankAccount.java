@@ -1,3 +1,4 @@
+// TODO: Auto-generated Javadoc
 /**
  * The Class BankAccount.
  */
@@ -5,7 +6,8 @@ public class BankAccount {
 
   /** The balance. */
   private double balance;
-  
+
+  /** The Constant PAYFORTRANSFER. */
   public static final double PAYFORTRANSFER = 0.01;
 
   /**
