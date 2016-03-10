@@ -117,7 +117,8 @@ public class EX05 {
 
     for (int i = 0; i < retAll.length; i++) {
       if  (i == 1)  {
-        ret += "Release Date: " + retAll[i] + "\n";
+        retAll[i] = retAll[i].replaceAll("-", "/");
+        ret += "Release date: " + retAll[i] + "\n";
       }
 
       if (i == 0)  {
@@ -125,11 +126,11 @@ public class EX05 {
       }
 
       if (i == 2) {
-        ret += "Description: " + retAll[i] + "\n";
+        ret += "Description " + retAll[i] + "\n";
       }
 
       if (i == 3) {
-        ret += "Average Rating: " + retAll[i];
+        ret += "Average rating: " + retAll[i];
       }
     }
     return ret;
