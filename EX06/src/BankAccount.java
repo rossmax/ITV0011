@@ -1,4 +1,3 @@
-// TODO: Auto-generated Javadoc
 /**
  * The Class BankAccount.
  */
@@ -27,6 +26,9 @@ public class BankAccount {
    * @return true, if successful
    */
   public boolean transferMoneyTo(BankAccount targetAccount, double amount) {
+    if (amount < 0) {
+      return false;
+    }
     if (balance < amount + (PAYFORTRANSFER * amount)) {
       return false; // System.out.println("Not enough money for transfer");
     }
