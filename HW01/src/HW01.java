@@ -140,29 +140,31 @@ public class HW01 {
         // initialize map (for example 2D-array)
         // - set all cells empty (is this needed?)
         // do some random for every treasure and add them to map:
+        if (height == 0) {
+            height++;
+        }
+        if (width == 0) {
+            width++;
+        }
         matrixSymbols = new char[height][width];
         matrixValue = new int[height][width];
         int count = 0;
         char dot = '.';
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                if (matrixValue[i][j] == CELL_EMPTY) {
-                    matrixValue[i][j] = CELL_EMPTY;
-                }
                 matrixSymbols[i][j] = dot;
-                if (count < treasures) {
-                    Random n = new Random();
-                    Random m = new Random();
-                    int nn = n.nextInt(height);
-                    int mm = m.nextInt(width);
-                    if (matrixValue[nn][mm] == CELL_TREASURE) {
-                        count--;
-                    }
-                    setCell(nn, mm, CELL_TREASURE);
-                    count++;
-
                 }
             }
+        while (count < treasures) {
+            Random n = new Random();
+            Random m = new Random();
+            int nn = n.nextInt(height);
+            int mm = m.nextInt(width);
+            if (matrixValue[nn][mm] == CELL_TREASURE) {
+                count--;
+            }
+            setCell(nn, mm, CELL_TREASURE);
+            count++;
         }
         return false;
     }
