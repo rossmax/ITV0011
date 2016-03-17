@@ -195,7 +195,7 @@ public class HW01 {
             matrixValue[row][col] = CELL_TREASURE;
             return true;
         }
-        return row != -123;
+        return false; //row != -123;
     }
 
 
@@ -228,11 +228,11 @@ public class HW01 {
      * @param matrixValue the matrix value
      * @return the int
      */
-    public static int aardeidSum(int[][] matrixValue) {
+    public static int aardeidSum(int[][] MatrixValue) {
 
         int aardeid = 0;
-        for (int i = 0; i < matrixValue.length; i++) {
-            for (int j = 0; j < matrixValue[0].length; j++) {
+        for (int i = 0; i < MatrixValue.length; i++) {
+            for (int j = 0; j < MatrixValue[0].length; j++) {
                 if (matrixValue[i][j] == CELL_TREASURE) {
                     aardeid++;
                 }
