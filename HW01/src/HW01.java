@@ -53,8 +53,6 @@ public class HW01 {
             int height = 1;
             int width = 1;
             int treasures = 1;
-            int row = 0;
-            int col = 0;
             int kaevamisiSum = 0;
             while (height > 0 && treasures > 0 && width > 0) {
                 Scanner sc = new Scanner(System.in);
@@ -72,20 +70,24 @@ public class HW01 {
                         System.out.println(
                                 "kaevamisi: " + kaevamisiSum + ", aardeid jäänud: " + aardeidSum(matrixValue));
                         kaevamisiSum++;
-                        System.out.print("Mida kaevame (rida, veerg): ");
-                        String moeldnudAarde = sc.nextLine();
-                        System.out.print("\n");
-                        String[] ardArray = moeldnudAarde.split(",");
-                        row = Integer.parseInt(ardArray[0]);
-                        col = Integer.parseInt(ardArray[1]);
+                        int row = height - 1;
+                        int col = width - 1;
+                        while ((row > height || row < 0) || (col > width || col < 0)) {
+                            System.out.print("Mida kaevame (rida, veerg): ");
+                            String moeldnudAarde = sc.nextLine();
+                            System.out.print("\n");
+                            String[] ardArray = moeldnudAarde.split(",");
+                            row = Integer.parseInt(ardArray[0]);
+                            col = Integer.parseInt(ardArray[1]);
+                        }
                         makeMove(row, col);
                     }
                     if (aardeidSum(matrixValue) == 0) {
                         System.out.println(
                                 "kaevamisi: " + kaevamisiSum + ", aardeid jäänud: " + aardeidSum(matrixValue));
-                        System.out.println("Mäng läbi! Kokku tehti " + kaevamisiSum + " kaevamist.");
+                        System.out.println("\nMäng läbi! Kokku tehti " + kaevamisiSum + " kaevamist.");
                         System.out.print("Kas soovid veel mängida?(jah,ei): ");
-                        if (sc.nextLine() == "jah") {
+                        if (sc.next().equals("jah")) {
                             startGame = true;
                             break;
                         } else {
