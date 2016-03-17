@@ -99,13 +99,13 @@ public class HW01 {
      * @return Contents of the cell.
      */
     public static int makeMove(int row, int col) {
-        if (Cell(row, col)) {
+        if (getCell(row, col)) {
             matrixSymbols[row][col] = '+';
             matrixValue[row][col] = CELL_DIG;
             System.out.print(getMatrix(matrixSymbols));
             System.out.println("AARE!\n");
         }
-        if (!Cell(row, col)){
+        if (!getCell(row, col)){
             matrixSymbols[row][col] = ' ';
             System.out.println(getMatrix(matrixSymbols));
         }
@@ -162,9 +162,9 @@ public class HW01 {
      *
      * @param row Row index.
      * @param col Column index.
-     * @return Whether the cell value was set.
+     * @return Whether the getCell value was set.
      */
-    public static boolean Cell(int row, int col) {
+    public static boolean getCell(int row, int col) {
 
         if (matrixValue[row][col] == CELL_EMPTY || matrixValue[row][col] == CELL_ERROR) {
             return false;
