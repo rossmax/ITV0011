@@ -1,6 +1,6 @@
-
 import java.util.Random;
 import java.util.Scanner;
+
 /**
  * Template for HW01: Treasurehunt. More information:
  * https://courses.cs.ttu.ee/pages/ITI0011:Aardejaht
@@ -19,16 +19,21 @@ public class HW01 {
     /**
      * Value to return in makeMove in case the cell does not exist.
      */
-
     public static final int CELL_ERROR = -1;
 
-    /** The Constant CELL_DIG. */
+    /**
+     * The Constant CELL_DIG.
+     */
     public static final int CELL_DIG = 2;
 
-    /** The Matrix value. */
+    /**
+     * The Matrix value.
+     */
     public static int[][] matrixValue;
 
-    /** The Matrix symbols. */
+    /**
+     * The Matrix symbols.
+     */
     public static char[][] matrixSymbols;
 
     /**
@@ -50,7 +55,7 @@ public class HW01 {
                 Scanner sc = new Scanner(System.in);
                 System.out.print("Sisesta M (ridade arv), N (veergude arv), X (aarete arv): ");
                 String parameterInput = sc.nextLine();
-                String parArray[] = parameterInput.split(",");
+                String[] parArray = parameterInput.split(",");
                 height = Integer.parseInt(parArray[0]);
                 width = Integer.parseInt(parArray[1]);
                 treasures = Integer.parseInt(parArray[2]);
@@ -65,7 +70,7 @@ public class HW01 {
                         System.out.print("Mida kaevame (rida, veerg): ");
                         String moeldnudAarde = sc.nextLine();
                         System.out.print("\n");
-                        String ardArray[] = moeldnudAarde.split(",");
+                        String[] ardArray = moeldnudAarde.split(",");
                         row = Integer.parseInt(ardArray[0]);
                         col = Integer.parseInt(ardArray[1]);
                         makeMove(row, col);
@@ -105,12 +110,13 @@ public class HW01 {
             System.out.print(getMatrix(matrixSymbols));
             System.out.println("AARE!\n");
         }
-        if (!getCell(row, col)){
+        if (!getCell(row, col)) {
             matrixSymbols[row][col] = ' ';
             System.out.println(getMatrix(matrixSymbols));
         }
-        if (row == -1)
+        if (row == -1) {
             return CELL_ERROR;
+        }
         return CELL_EMPTY;
     }
 
@@ -120,8 +126,8 @@ public class HW01 {
      * your own implementation of how to store the map. The treasures should be put on the map
      * randomly using setCell method.
      *
-     * @param height Height of the map.
-     * @param width Width of the map.
+     * @param height    Height of the map.
+     * @param width     Width of the map.
      * @param treasures The number of treasures on the map.
      * @return Whether map was created.
      */
@@ -172,9 +178,17 @@ public class HW01 {
         if (matrixValue[row][col] == CELL_TREASURE || matrixValue[row][col] == CELL_DIG) {
             return true;
         }
-        return row != -123;
+        return true; //row != -123;
     }
 
+    /**
+     * Sets cell.
+     *
+     * @param row          the row
+     * @param col          the col
+     * @param cellContents the cell contents
+     * @return the cell
+     */
     public static boolean setCell(int row, int col, int cellContents) {
 
         if (matrixValue[row][col] == CELL_EMPTY) {
@@ -185,12 +199,12 @@ public class HW01 {
     }
 
 
-        /**
-         * Gets the matrix.
-         *
-         * @param createMatricSymbols the create matric symbols
-         * @return the matrix
-         */
+    /**
+     * Gets the matrix.
+     *
+     * @param createMatricSymbols the create matric symbols
+     * @return the matrix
+     */
     public static String getMatrix(char[][] createMatricSymbols) {
         String matrixTekstikujul = "";
         String str;
