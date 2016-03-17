@@ -111,13 +111,13 @@ public class HW01 {
      * @return Contents of the cell.
      */
     public static int makeMove(int row, int col) {
-        if (getCell(row, col)) {
+        if (getCell(row, col) == CELL_TREASURE || getCell(row, col) == CELL_DIG) {
             matrixSymbols[row][col] = '+';
             matrixValue[row][col] = CELL_DIG;
             System.out.print(getMatrix(matrixSymbols));
             System.out.println("AARE!\n");
         }
-        if (!getCell(row, col)) {
+        if (getCell(row, col) == CELL_EMPTY || getCell(row, col) == CELL_ERROR) {
             matrixSymbols[row][col] = ' ';
             System.out.println(getMatrix(matrixSymbols));
         }
@@ -179,15 +179,21 @@ public class HW01 {
      * @param col Column index.
      * @return Whether the getCell value was set.
      */
-    public static boolean getCell(int row, int col) {
+    public static int getCell(int row, int col) {
 
-        if (matrixValue[row][col] == CELL_EMPTY || matrixValue[row][col] == CELL_ERROR) {
-            return false;
+        if (matrixValue[row][col] == CELL_EMPTY) {
+            return CELL_EMPTY;
         }
-        if (matrixValue[row][col] == CELL_TREASURE || matrixValue[row][col] == CELL_DIG) {
-            return true;
+        if (matrixValue[row][col] == CELL_ERROR) {
+            return CELL_ERROR;
         }
-        return row != INVALIDVALUE;
+        if (matrixValue[row][col] == CELL_TREASURE) {
+            return CELL_TREASURE;
+        }
+        if (matrixValue[row][col] == CELL_DIG) {
+            return CELL_DIG;
+        }
+        return row = INVALIDVALUE;
     }
 
     /**
