@@ -39,7 +39,7 @@ public class HW01 {
     /**
      * The constant invalidValue.
      */
-    public static final int invalidValue = -123;
+    public static final int INVALIDVALUE = -123;
 
     /**
      * Main entry.
@@ -183,7 +183,7 @@ public class HW01 {
         if (matrixValue[row][col] == CELL_TREASURE || matrixValue[row][col] == CELL_DIG) {
             return true;
         }
-        return row != invalidValue;
+        return row != INVALIDVALUE;
     }
 
     /**
@@ -200,7 +200,7 @@ public class HW01 {
             matrixValue[row][col] = CELL_TREASURE;
             return true;
         }
-        return row != invalidValue;
+        return row != INVALIDVALUE;
     }
 
 
