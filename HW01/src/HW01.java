@@ -37,6 +37,11 @@ public class HW01 {
     public static char[][] matrixSymbols;
 
     /**
+     * The constant invalidValue.
+     */
+    public static final int invalidValue = -123;
+
+    /**
      * Main entry.
      *
      * @param args Command-line arguments.
@@ -178,7 +183,7 @@ public class HW01 {
         if (matrixValue[row][col] == CELL_TREASURE || matrixValue[row][col] == CELL_DIG) {
             return true;
         }
-        return true; //row != -123;
+        return row != invalidValue;
     }
 
     /**
@@ -195,7 +200,7 @@ public class HW01 {
             matrixValue[row][col] = CELL_TREASURE;
             return true;
         }
-        return false; //row != -123;
+        return row != invalidValue;
     }
 
 
