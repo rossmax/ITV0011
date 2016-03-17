@@ -70,9 +70,9 @@ public class HW01 {
                         System.out.println(
                                 "kaevamisi: " + kaevamisiSum + ", aardeid jäänud: " + aardeidSum(matrixValue));
                         kaevamisiSum++;
-                        int row = height - 1;
-                        int col = width - 1;
-                        while ((row > height || row < 0) || (col > width || col < 0)) {
+                        int row = height + 1;
+                        int col = width + 1;
+                        while ((row > width || col > height) || (row < 0 || col < 0)) {
                             System.out.print("Mida kaevame (rida, veerg): ");
                             String moeldnudAarde = sc.nextLine();
                             System.out.print("\n");
