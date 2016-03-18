@@ -56,12 +56,18 @@ public class HW01 {
             int kaevamisiSum = 0;
             while (height > 0 && treasures > 0 && width > 0) {
                 Scanner sc = new Scanner(System.in);
-                System.out.print("Sisesta M (ridade arv), N (veergude arv), X (aarete arv): ");
-                String parameterInput = sc.nextLine();
-                String[] parArray = parameterInput.split(",");
-                height = Integer.parseInt(parArray[0]);
-                width = Integer.parseInt(parArray[1]);
-                treasures = Integer.parseInt(parArray[2]);
+                try {
+
+                    System.out.print("Sisesta M (ridade arv), N (veergude arv), X (aarete arv): ");
+                    String parameterInput = sc.nextLine();
+                    String[] parArray = parameterInput.split(",");
+                    height = Integer.parseInt(parArray[0]);
+                    width = Integer.parseInt(parArray[1]);
+                    treasures = Integer.parseInt(parArray[2]);
+                } catch (Throwable t) {
+                    System.out.println("Vale parametrid!");
+                    break;
+                }
                 if ((height > 0 && width > 0) && (treasures <= height && treasures <= width)) {
                     createMap(height, width, treasures);
                     System.out.println("Edukat kaevamist!\n");
@@ -73,12 +79,16 @@ public class HW01 {
                         int row = height + 1;
                         int col = width + 1;
                         while ((row > width - 1 || col > height - 1) || (row < 0 || col < 0)) {
-                            System.out.print("Mida kaevame (rida, veerg): ");
-                            String moeldnudAarde = sc.nextLine();
-                            System.out.print("\n");
-                            String[] ardArray = moeldnudAarde.split(",");
-                            row = Integer.parseInt(ardArray[0]);
-                            col = Integer.parseInt(ardArray[1]);
+                            try {
+                                System.out.print("Mida kaevame (rida, veerg): ");
+                                String moeldnudAarde = sc.nextLine();
+                                //System.out.print("\n");
+                                String[] ardArray = moeldnudAarde.split(",");
+                                row = Integer.parseInt(ardArray[0]);
+                                col = Integer.parseInt(ardArray[1]);
+                            } catch (Throwable k) {
+                                System.out.println("Vale parametrid!");
+                            }
                         }
                         makeMove(row, col);
                     }
