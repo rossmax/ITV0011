@@ -203,9 +203,6 @@ public class HW01 {
      * @return the cell
      */
     public static boolean setCell(int row, int col, int cellContents) {
-        if (matrixValue[row][col] == 0) {
-            return false;
-        }
         if (matrixValue[row][col] == CELL_EMPTY) {
             matrixValue[row][col] = CELL_TREASURE;
             return true;
