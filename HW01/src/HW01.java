@@ -111,6 +111,10 @@ public class HW01 {
      * @return Contents of the cell.
      */
     public static int makeMove(int row, int col) {
+        if (row > 0 || col > 0) {
+            return
+        }
+
         if (getCell(row, col) == CELL_TREASURE || getCell(row, col) == CELL_DIG) {
             matrixSymbols[row][col] = '+';
             matrixValue[row][col] = CELL_DIG;
@@ -142,7 +146,7 @@ public class HW01 {
         // initialize map (for example 2D-array)
         // - set all cells empty (is this needed?)
         // do some random for every treasure and add them to map:
-        if (height <= 0 || width <= 0 || treasures <= 0 || treasures > height || treasures > width) {
+        if (height <= 0 || width <= 0 || treasures < 0 || treasures > height || treasures > width) {
            return false;
         }
         matrixSymbols = new char[height][width];
@@ -202,7 +206,9 @@ public class HW01 {
      * @return the cell
      */
     public static boolean setCell(int row, int col, int cellContents) {
-
+        if (matrixValue[row][col] == 0) {
+            return false;
+        }
         if (matrixValue[row][col] == CELL_EMPTY) {
             matrixValue[row][col] = CELL_TREASURE;
             return true;
