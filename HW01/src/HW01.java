@@ -143,7 +143,9 @@ public class HW01 {
         // initialize map (for example 2D-array)
         // - set all cells empty (is this needed?)
         // do some random for every treasure and add them to map:
-
+        if (height <= 0 || width <= 0 || treasures <= 0) {
+           return false;
+        }
         matrixSymbols = new char[height][width];
         matrixValue = new int[height][width];
         int count = 0;
