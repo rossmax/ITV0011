@@ -73,7 +73,6 @@ public class HW01 {
                         int row = height + 1;
                         int col = width + 1;
                         while ((row > width - 1 || col > height - 1) || (row < 0 || col < 0)) {
-                        //while ((row > matrixSymbols.length || col > matrixSymbols[].length) || (row < 0 || col < 0) ) {
                             System.out.print("Mida kaevame (rida, veerg): ");
                             String moeldnudAarde = sc.nextLine();
                             System.out.print("\n");
@@ -143,7 +142,7 @@ public class HW01 {
         // initialize map (for example 2D-array)
         // - set all cells empty (is this needed?)
         // do some random for every treasure and add them to map:
-        if (height <= 0 || width <= 0 || treasures <= 0) {
+        if (height <= 0 || width <= 0 || treasures <= 0 || treasures > height || treasures > width) {
            return false;
         }
         matrixSymbols = new char[height][width];
@@ -191,7 +190,7 @@ public class HW01 {
         if (matrixValue[row][col] == CELL_DIG) {
             return CELL_DIG;
         }
-        return row = INVALIDVALUE;
+        return INVALIDVALUE;
     }
 
     /**
