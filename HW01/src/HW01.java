@@ -148,6 +148,9 @@ public class HW01 {
         if (height <= 0 || width <= 0 || treasures <= 0 || treasures > height || treasures > width) {
            return false;
         }
+        if (treasures > height * width) {
+            return false;
+        }
         matrixSymbols = new char[height][width];
         matrixValue = new int[height][width];
         int count = 0;
