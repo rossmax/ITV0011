@@ -62,7 +62,7 @@ public class HW01 {
                 height = Integer.parseInt(parArray[0]);
                 width = Integer.parseInt(parArray[1]);
                 treasures = Integer.parseInt(parArray[2]);
-                if ((height >= 0 && width >= 0) && (treasures <= height && treasures <= width)) {
+                if ((height > 0 && width > 0) && (treasures <= height && treasures <= width)) {
                     createMap(height, width, treasures);
                     System.out.println("Edukat kaevamist!\n");
                     System.out.println(getMatrix(matrixSymbols));
