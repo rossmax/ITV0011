@@ -111,7 +111,9 @@ public class HW01 {
      * @return Contents of the cell.
      */
     public static int makeMove(int row, int col) {
-
+        if (matrixValue.length == null) {
+            return 0;
+        }
         if (getCell(row, col) == CELL_TREASURE || getCell(row, col) == CELL_DIG) {
             matrixSymbols[row][col] = '+';
             matrixValue[row][col] = CELL_DIG;
