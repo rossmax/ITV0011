@@ -62,7 +62,7 @@ public class HW01 {
                 height = Integer.parseInt(parArray[0]);
                 width = Integer.parseInt(parArray[1]);
                 treasures = Integer.parseInt(parArray[2]);
-                if ((height > 0 || width > 0) && (treasures <= height || treasures <= width)) {
+                if ((height >= 0 && width >= 0) && (treasures <= height && treasures <= width)) {
                     createMap(height, width, treasures);
                     System.out.println("Edukat kaevamist!\n");
                     System.out.println(getMatrix(matrixSymbols));
@@ -72,7 +72,8 @@ public class HW01 {
                         kaevamisiSum++;
                         int row = height + 1;
                         int col = width + 1;
-                        while ((row > width || col > height) || (row < 0 || col < 0)) {
+                        while ((row > width - 1 || col > height - 1) || (row < 0 || col < 0)) {
+                        //while ((row > matrixSymbols.length || col > matrixSymbols[].length) || (row < 0 || col < 0) ) {
                             System.out.print("Mida kaevame (rida, veerg): ");
                             String moeldnudAarde = sc.nextLine();
                             System.out.print("\n");
@@ -142,12 +143,7 @@ public class HW01 {
         // initialize map (for example 2D-array)
         // - set all cells empty (is this needed?)
         // do some random for every treasure and add them to map:
-        if (height == 0) {
-            height++;
-        }
-        if (width == 0) {
-            width++;
-        }
+
         matrixSymbols = new char[height][width];
         matrixValue = new int[height][width];
         int count = 0;
@@ -168,7 +164,7 @@ public class HW01 {
             setCell(nn, mm, CELL_TREASURE);
             count++;
         }
-        return false;
+        return true;
     }
 
     /**
