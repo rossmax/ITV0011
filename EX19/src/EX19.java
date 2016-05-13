@@ -1,3 +1,4 @@
+
 import java.util.Arrays;
 
 /**
@@ -5,7 +6,12 @@ import java.util.Arrays;
  */
 public class EX19 {
 
-        public static void main(String[] args) {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args) {
             String test = "Koeratoit toidukoeratäpp toidukoor kalamaja TäpikKoer koe";
             int[] result = testDog(test);
             System.out.println(Arrays.toString(testDog(test)));
@@ -17,7 +23,18 @@ public class EX19 {
 
 
         }
-        public static int[] testDog(String text) {
+
+    /**
+     * Test dog int [ ].
+     *
+     * @param text the text
+     * @return the int [ ]
+     */
+    public static int[] testDog(String text) {
+
+            if(text.equals(null)) {
+                return new int[]{0};
+            }
             int elusKoer = 0;
             int surnudKoer = 0;
             int[] count = new int[2];
@@ -37,7 +54,14 @@ public class EX19 {
             return count;
 
         }
-        public static String reverse(String text){
+
+    /**
+     * Reverse string.
+     *
+     * @param text the text
+     * @return the string
+     */
+    public static String reverse(String text){
             String res = "";
             String result = "";
             char charArray[];
@@ -45,7 +69,7 @@ public class EX19 {
             for (String part : text.split(" ")) {
                 res = new StringBuilder(part).reverse().toString();
                 charArray = res.toCharArray();
-                if(res.length() > 0) {
+                if (res.length() > 0) {
                     if (Character.isUpperCase(charArray[res.length() - 1]) && charArray[0] != '!') {
                         res = lowerCaseFirst(res);
                         res = upperCaseFirst(res);
@@ -57,12 +81,26 @@ public class EX19 {
             return result;
 
         }
-        public static String lowerCaseFirst(String value) {
+
+    /**
+     * Lower case first string.
+     *
+     * @param value the value
+     * @return the string
+     */
+    public static String lowerCaseFirst(String value) {
             char[] array = value.toCharArray();
-            array[value.length()-1] = Character.toLowerCase(array[value.length()-1]);
+            array[value.length() - 1] = Character.toLowerCase(array[value.length() - 1]);
             return new String(array);
         }
-            public static String upperCaseFirst(String value) {
+
+    /**
+     * Upper case first string.
+     *
+     * @param value the value
+     * @return the string
+     */
+    public static String upperCaseFirst(String value) {
             char[] array = value.toCharArray();
             array[0] = Character.toUpperCase(array[0]);
         return new String(array);
