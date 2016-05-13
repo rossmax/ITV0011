@@ -31,9 +31,9 @@ public class EX19 {
      */
     public static int[] testDog(String text) {
 
-            if (text.equals(null) || text == null || text.equals("") || text == "") {
+           /* if (text.equals(null) || text == null || text.equals("") || text == "") {
             return null;
-        }
+        }*/
         if (text.equals(null) || text == null || text.equals("") || text == "") {
             return new int[]{0};
         }
@@ -64,12 +64,10 @@ public class EX19 {
      * @return the string
      */
     public static String reverse(String text) {
-        if (text.equals("")) {
+        if (text.equals("") || text == null) {
             return "";
         }
-        if (text == null) {
-            return null;
-        }
+
         String res = null;
             String result = "";
         char[] charArray;
