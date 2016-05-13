@@ -30,10 +30,13 @@ public class EX19 {
      * @return the int [ ]
      */
     public static int[] testDog(String text) {
-        
+
             if (text.equals(null) || text == null || text.equals("")) {
-                return null;
-            }
+            return null;
+        }
+        if (text.equals(null) || text == null || text.equals("")) {
+            return new int[]{0};
+        }
             int elusKoer = 0;
             int surnudKoer = 0;
             int[] count = new int[2];
