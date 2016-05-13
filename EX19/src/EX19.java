@@ -20,7 +20,7 @@ public class EX19 {
             System.out.println(reverse("tere"));
             System.out.println(reverse("a b"));
             System.out.println(reverse("Tere"));
-            System.out.println(reverse("TERE"));
+            System.out.println(reverse("TEREa"));
             System.out.println(reverse("Tere!"));
             System.out.println(reverse("tere!"));
 
