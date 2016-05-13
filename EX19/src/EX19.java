@@ -34,7 +34,7 @@ public class EX19 {
             if (text == null) {
                 return null;
             }
-            if (text.equals("")) {
+            if (text == "")) {
                 return null;
             }
             int elusKoer = 0;
