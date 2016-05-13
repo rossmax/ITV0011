@@ -35,7 +35,7 @@ public class EX19 {
                 return null;
             }
             if (text.equals("")) {
-                return new int[]{0};
+                return null;
             }
             int elusKoer = 0;
             int surnudKoer = 0;
