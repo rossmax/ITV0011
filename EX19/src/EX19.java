@@ -32,8 +32,8 @@ public class EX19 {
     public static int[] testDog(String text) {
 
 
-        if (text.equals("") || text == "") {
-            return null;
+        if (text.equals("") || text == ""|| text == null) {
+            return new int[]{};
         }
             int elusKoer = 0;
             int surnudKoer = 0;
