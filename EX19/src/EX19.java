@@ -19,7 +19,7 @@ public class EX19 {
             System.out.println(Arrays.toString(testDog("0")));
             System.out.println(reverse("a"));
             System.out.println(reverse("a b"));
-            System.out.println(reverse("Tere"));
+            System.out.println(reverse("Tere dsf s Sakm823823bbb s985sd59(/&()==Ixjnbf mndsjnf9(/&%¤%&/()=?`+9sdfnb  d sdf sdf sdfweknksf sfksdf sdo sdfoosdf osdf osdf sdofd fdsodsf dsfo dodsf osd fdsosdodsf osdfieiJHNDS FODJFNDJNidjIJIJ jdifjd iJIJDF Ijijdf IDFIJ fidji FDIJIJ fdijiJ FDIJ"));
             System.out.println(reverse("Tere!"));
 
 
@@ -31,7 +31,7 @@ public class EX19 {
      * @param text the text
      * @return the int [ ]
      */
-    public static int[] testDog(String text) throws Exception{
+    public static int[] testDog(String text) {
 
         if (text == null) {
             return null;
@@ -88,6 +88,7 @@ public class EX19 {
                         char[] array = res.toCharArray();
                         array[res.length() - 1] = Character.toLowerCase(array[res.length() - 1]);
                         array[0] = Character.toUpperCase(array[0]);
+                        res = new String(array);
 
                     }
                 }
