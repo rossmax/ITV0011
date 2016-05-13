@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 
 /**
@@ -32,7 +31,7 @@ public class EX19 {
      */
     public static int[] testDog(String text) {
 
-            if(text.equals(null)) {
+            if (text.equals(null)) {
                 return new int[]{0};
             }
             int elusKoer = 0;
@@ -61,10 +60,10 @@ public class EX19 {
      * @param text the text
      * @return the string
      */
-    public static String reverse(String text){
+    public static String reverse(String text) {
             String res = "";
             String result = "";
-            char charArray[];
+        char[] charArray;
 
             for (String part : text.split(" ")) {
                 res = new StringBuilder(part).reverse().toString();
