@@ -15,8 +15,8 @@ public class EX19 {
             int[] result = testDog(test);
             System.out.println(Arrays.toString(testDog(test)));
             System.out.println(Arrays.toString(testDog("koerkoerkoer")));
-            System.out.println(reverse("tere"));
-            System.out.println(reverse("a  b"));
+            System.out.println(reverse("a"));
+            System.out.println(reverse("a b"));
             System.out.println(reverse("Tere"));
             System.out.println(reverse("Tere!"));
 
@@ -73,40 +73,15 @@ public class EX19 {
 
                         char[] array = res.toCharArray();
                         array[res.length() - 1] = Character.toLowerCase(array[res.length() - 1]);
-                        /*res = lowerCaseFirst(res);
-                        res = upperCaseFirst(res);*/
                         array[0] = Character.toUpperCase(array[0]);
 
                     }
                 }
                 result += res + " ";
             }
-
+            result = result.replace(result.substring(result.length()-1), "");
             return result;
 
         }
 
-    /**
-     * Lower case first string.
-     *
-     * @param value the value
-     * @return the string
-     */
-    /*public static String lowerCaseFirst(String value) {
-            char[] array = value.toCharArray();
-            array[value.length() - 1] = Character.toLowerCase(array[value.length() - 1]);
-            return new String(array);
-        }
-
-    /**
-     * Upper case first string.
-     *
-     * @param value the value
-     * @return the string
-     */
-    /*public static String upperCaseFirst(String value) {
-            char[] array = value.toCharArray();
-            array[0] = Character.toUpperCase(array[0]);
-        return new String(array);
-        }*/
 }
