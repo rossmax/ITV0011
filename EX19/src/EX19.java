@@ -61,10 +61,13 @@ public class EX19 {
      * @return the string
      */
     public static String reverse(String text) {
-        if (text.equals("") || text == null) {
+        if (text.equals("")) {
             return "";
         }
-        String res = "";
+        if (text == null) {
+            return null;
+        }
+        String res = null;
             String result = "";
         char[] charArray;
 
