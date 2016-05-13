@@ -30,11 +30,8 @@ public class EX19 {
      * @return the int [ ]
      */
     public static int[] testDog(String text) {
-
-            if (text == null) {
-                return null;
-            }
-            if (text.equals("")) {
+        
+            if (text.equals(null) || text == null || text.equals("")) {
                 return null;
             }
             int elusKoer = 0;
