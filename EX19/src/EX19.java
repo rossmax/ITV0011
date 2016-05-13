@@ -32,7 +32,7 @@ public class EX19 {
     public static int[] testDog(String text) {
 
 
-        if (text.equals(null) || text == null || text.equals("") || text == "") {
+        if (text.equals("") || text == "") {
             return null;
         }
             int elusKoer = 0;
@@ -62,7 +62,11 @@ public class EX19 {
      * @return the string
      */
     public static String reverse(String text) {
-        if (text.equals("") || text == null) {
+
+        if (text == null)) {
+            return "";
+        }
+        if (text.equals("")) {
             return "";
         }
 
