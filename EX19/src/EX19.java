@@ -13,6 +13,16 @@ public class EX19 {
     public static void main(String[] args) {
             String test = "Koeratoit toidukoeratäpp toidukoor kalamaja TäpikKoer koe";
             int[] result = testDog(test);
+            System.out.println(Arrays.toString(testDog(test)));
+            System.out.println(Arrays.toString(testDog("")));
+            System.out.println(Arrays.toString(testDog(null)));
+            System.out.println(Arrays.toString(testDog("0")));
+            System.out.println(reverse("tere"));
+            System.out.println(reverse("a b"));
+            System.out.println(reverse("Tere"));
+            System.out.println(reverse("tere!"));
+
+
         }
 
     /**
@@ -74,10 +84,17 @@ public class EX19 {
                 charArray = res.toCharArray();
                 if (res.length() > 0) {
                     if (Character.isUpperCase(charArray[res.length() - 1]) && charArray[0] != '!') {
-
                         char[] array = res.toCharArray();
-                        array[res.length() - 1] = Character.toLowerCase(array[res.length() - 1]);
-                        array[0] = Character.toUpperCase(array[0]);
+                        for(int i = 0; i < array.length; i++) {
+                            if(array[0] != '!') {
+                                array[0] = Character.toUpperCase(array[0]);
+                            }
+                            if(array[res.length() - 1] != '!') {
+                                array[res.length() - 1] = Character.toLowerCase(array[res.length() - 1]);
+                            }
+                            array[i] = Character.toLowerCase(array[i]);
+                        }
+
                         res = new String(array);
 
                     }
