@@ -32,7 +32,7 @@ public class EX19 {
     public static int[] testDog(String text) {
 
             if (text.equals(null) && text == null) {
-                return new int[]{0};
+                return null;
             }
             int elusKoer = 0;
             int surnudKoer = 0;
