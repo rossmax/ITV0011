@@ -31,7 +31,7 @@ public class EX19 {
      * @param text the text
      * @return the int [ ]
      */
-    public static int[] testDog(String text) {
+    public static int[] testDog(String text) throws Exception{
 
         if (text == null) {
             return null;
