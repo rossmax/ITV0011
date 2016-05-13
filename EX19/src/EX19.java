@@ -61,7 +61,10 @@ public class EX19 {
      * @return the string
      */
     public static String reverse(String text) {
-            String res = "";
+        if (text.equals("") || text == null) {
+            return "";
+        }
+        String res = "";
             String result = "";
         char[] charArray;
 
@@ -79,8 +82,10 @@ public class EX19 {
                 }
                 result += res + " ";
             }
-            result = result.replace(result.substring(result.length()-1), "");
-            return result;
+        charArray = result.toCharArray();
+        char[] array2 = Arrays.copyOfRange(charArray, 0, charArray.length-1);
+        String s = new String(array2);
+        return s;
 
         }
 
