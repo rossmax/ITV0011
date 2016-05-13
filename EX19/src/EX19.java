@@ -70,8 +70,13 @@ public class EX19 {
                 charArray = res.toCharArray();
                 if (res.length() > 0) {
                     if (Character.isUpperCase(charArray[res.length() - 1]) && charArray[0] != '!') {
-                        res = lowerCaseFirst(res);
-                        res = upperCaseFirst(res);
+
+                        char[] array = res.toCharArray();
+                        array[res.length() - 1] = Character.toLowerCase(array[res.length() - 1]);
+                        /*res = lowerCaseFirst(res);
+                        res = upperCaseFirst(res);*/
+                        array[0] = Character.toUpperCase(array[0]);
+
                     }
                 }
                 result += res + " ";
@@ -87,7 +92,7 @@ public class EX19 {
      * @param value the value
      * @return the string
      */
-    public static String lowerCaseFirst(String value) {
+    /*public static String lowerCaseFirst(String value) {
             char[] array = value.toCharArray();
             array[value.length() - 1] = Character.toLowerCase(array[value.length() - 1]);
             return new String(array);
@@ -99,9 +104,9 @@ public class EX19 {
      * @param value the value
      * @return the string
      */
-    public static String upperCaseFirst(String value) {
+    /*public static String upperCaseFirst(String value) {
             char[] array = value.toCharArray();
             array[0] = Character.toUpperCase(array[0]);
         return new String(array);
-        }
+        }*/
 }
