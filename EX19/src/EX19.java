@@ -14,7 +14,7 @@ public class EX19 {
             String test = "Koeratoit toidukoeratäpp toidukoor kalamaja TäpikKoer koe";
             int[] result = testDog(test);
             System.out.println(Arrays.toString(testDog(test)));
-            System.out.println(Arrays.toString(testDog(null)));
+            System.out.println(Arrays.toString(testDog("")));
             System.out.println(reverse("a"));
             System.out.println(reverse("a b"));
             System.out.println(reverse("Tere"));
@@ -31,7 +31,7 @@ public class EX19 {
      */
     public static int[] testDog(String text) {
 
-            if (text == null) {
+            if (text == null || text == "") {
                 return null;
             }
             int elusKoer = 0;
@@ -62,7 +62,7 @@ public class EX19 {
      */
     public static String reverse(String text) {
         if (text.equals("") || text == null) {
-            return "";
+            return null;
         }
         String res = "";
             String result = "";
