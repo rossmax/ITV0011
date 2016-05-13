@@ -63,7 +63,7 @@ public class EX19 {
      */
     public static String reverse(String text) {
 
-        if (text == null)) {
+        if (text == null) {
             return "";
         }
         if (text.equals("")) {
