@@ -31,7 +31,7 @@ public class EX19 {
      */
     public static int[] testDog(String text) {
 
-            if (text == null || text == "") {
+            if (text == null || text.equals("")) {
                 return null;
             }
             int elusKoer = 0;
@@ -62,7 +62,7 @@ public class EX19 {
      */
     public static String reverse(String text) {
         if (text.equals("") || text == null) {
-            return null;
+            return "";
         }
         String res = "";
             String result = "";
