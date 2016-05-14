@@ -38,9 +38,9 @@ public class EX19 {
         if (text == null) {
             return null;
         }
-        if(text.isEmpty()) {
+        if (text.isEmpty()) {
             return new int[]{0};
-        }/*
+        } /*
         if (text.equals("")) {
             return new int[]{0};
         }*/
@@ -109,7 +109,7 @@ public class EX19 {
                 result += res + " ";
             }
         charArray = result.toCharArray();
-        char[] array2 = Arrays.copyOfRange(charArray, 0, charArray.length-1);
+        char[] array2 = Arrays.copyOfRange(charArray, 0, charArray.length - 1);
         String s = new String(array2);
         return s;
 
