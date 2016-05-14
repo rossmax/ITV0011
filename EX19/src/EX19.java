@@ -20,7 +20,7 @@ public class EX19 {
             System.out.println(reverse("tere"));
             System.out.println(reverse("a b"));
             System.out.println(reverse("Tere"));
-            System.out.println(reverse("TEREa"));
+            System.out.println(reverse("tEre"));
             System.out.println(reverse("Tere!"));
             System.out.println(reverse("tere!"));
 
@@ -87,7 +87,7 @@ public class EX19 {
                 if (res.length() > 0) {
                     if (Character.isUpperCase(charArray[res.length() - 1]) || charArray[0] != '!') {
                         char[] array = res.toCharArray();
-                        for(int i = 1; i < array.length; i++) {
+                        /*for(int i = 1; i < array.length; i++) {
                             if(array[0] == '!') {
                                 break;
                             }
@@ -97,7 +97,7 @@ public class EX19 {
                             }
 
                             array[i] = Character.toLowerCase(array[i]);
-                        }
+                        }*/
 
                         res = new String(array);
 
