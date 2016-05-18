@@ -4,7 +4,7 @@
 public class EX16 {
     public static int count98(int n) {
         //IMPLEMENTATION HERE
-        if (n == 0 || n > 0) {
+        if (n == 0 || n < 0) {
             return 0;
         }
 
