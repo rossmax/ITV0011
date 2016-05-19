@@ -2,6 +2,9 @@
  * Created by Max Ross on 5/15/2016 7:39 PM.
  */
 public class EX16 {
+    public static final int N = 9;
+    public static final int E = 8;
+    public static final int T = 10;
     /**
      * Count 98 int.
      *
@@ -9,6 +12,7 @@ public class EX16 {
      * @return the int
      */
     public static int count98(int n) {
+
         //IMPLEMENTATION HERE
         if (n == 0 || n < 0) {
             return 0;
@@ -20,14 +24,14 @@ public class EX16 {
         int firstDigit = Integer.parseInt(Integer.toString(n).substring(0, 1));
         int determinant = firstDigit * 10;
 
-        if (firstDigit == 9 || firstDigit == 8) {
+        if (firstDigit == N || firstDigit == E) {
             on = 1;
         } else {
             on = 0;
         }
 
         for (int i = 0; i < length - 2; i++) {
-            determinant = determinant * 10;
+            determinant = determinant * T;
         }
 
         if (on == 1 && length == 1) return 1;
@@ -51,7 +55,7 @@ public class EX16 {
 
         int result;
         int on;
-        int length = (int)(Math.log10(n)+1);
+        int length = (int)(Math.log10(n) + 1);
         int digit = Integer.parseInt(Integer.toString(n).substring(0,1));
         int determinant = digit * 10;
 
@@ -85,9 +89,7 @@ public class EX16 {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        System.out.println(count98(0));
-        System.out.println(count98(999800818)); // => 3
-        System.out.println(count98Harder(90818)); // => 5
+        
         //TEST YOUR IMPLEMENTATION HERE
     }
 }
