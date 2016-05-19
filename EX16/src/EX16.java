@@ -22,7 +22,7 @@ public class EX16 {
         int on;
         int length = (int)(Math.log10(n) + 1);
         int firstDigit = Integer.parseInt(Integer.toString(n).substring(0, 1));
-        int determinant = firstDigit * 10;
+        int determinant = firstDigit * T;
 
         if (firstDigit == N || firstDigit == E) {
             on = 1;
@@ -55,16 +55,16 @@ public class EX16 {
 
         int result;
         int on;
-        int length = (int)(Math.log10(n) + 1);
+        int length = (int) (Math.log10 (n) + 1);
         int digit = Integer.parseInt(Integer.toString(n).substring(0,1));
         int determinant = digit * 10;
 
-        if (digit == 9 || digit == 8) {
+        if (digit == N || digit == E) {
             on = 1;
             if (length >= 3) {
-                int firstDigit = Integer.parseInt(Integer.toString(n).substring(0,1));
-                int secondDigit = Integer.parseInt(Integer.toString(n).substring(1,2));
-                if (firstDigit + secondDigit == 9 || firstDigit + secondDigit == 8) {
+                int firstDigit = Integer.parseInt(Integer.toString(n).substring(0, 1));
+                int secondDigit = Integer.parseInt(Integer.toString(n).substring(1, 2));
+                if (firstDigit + secondDigit == N || firstDigit + secondDigit == E) {
                     on = 2;
                 }
             }
@@ -73,7 +73,7 @@ public class EX16 {
         }
 
         for (int i = 0; i < length - 2; i++) {
-            determinant = determinant * 10;
+            determinant = determinant * T;
         }
 
         if (on == 1 && length == 1) return 1;
@@ -89,7 +89,7 @@ public class EX16 {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        
+
         //TEST YOUR IMPLEMENTATION HERE
     }
 }
