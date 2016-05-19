@@ -38,10 +38,10 @@ public class EX19 {
     public static int[] testDog(String text) {
 
         if (text == null) {
-            return null;
+            return new int[]{0,0};
         }
         if (text.isEmpty()) {
-            return new int[]{0};
+            return new int[]{0,0};
         } /*
         if (text.equals("")) {
             return new int[]{0};
