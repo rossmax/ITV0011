@@ -16,8 +16,8 @@ public class EX16 {
 
         int result;
         int on;
-        int length = (int)(Math.log10(n)+1);
-        int firstDigit = Integer.parseInt(Integer.toString(n).substring(0,1));
+        int length = (int)(Math.log10(n) + 1);
+        int firstDigit = Integer.parseInt(Integer.toString(n).substring(0, 1));
         int determinant = firstDigit * 10;
 
         if (firstDigit == 9 || firstDigit == 8) {
