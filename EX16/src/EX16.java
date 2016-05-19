@@ -14,6 +14,10 @@ public class EX16 {
      * The constant T.
      */
     public static final int T = 10;
+    /**
+     * The constant TR.
+     */
+    public static final int TR = 3;
 
     /**
      * Count 98 int.
@@ -30,7 +34,7 @@ public class EX16 {
 
         int result;
         int on;
-        int length = (int)(Math.log10(n) + 1);
+        int length = (int) (Math.log10(n) + 1);
         int firstDigit = Integer.parseInt(Integer.toString(n).substring(0, 1));
         int determinant = firstDigit * T;
 
@@ -65,13 +69,13 @@ public class EX16 {
 
         int result;
         int on;
-        int length = (int) (Math.log10 (n) + 1);
+        int length = (int) (Math.log10(n) + 1);
         int digit = Integer.parseInt(Integer.toString(n).substring(0,1));
-        int determinant = digit * 10;
+        int determinant = digit * T;
 
         if (digit == N || digit == E) {
             on = 1;
-            if (length >= 3) {
+            if (length >= TR) {
                 int firstDigit = Integer.parseInt(Integer.toString(n).substring(0, 1));
                 int secondDigit = Integer.parseInt(Integer.toString(n).substring(1, 2));
                 if (firstDigit + secondDigit == N || firstDigit + secondDigit == E) {
