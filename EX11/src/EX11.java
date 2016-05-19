@@ -26,13 +26,16 @@ public class EX11 extends Application {
      */
     public static final int WIDTH = 300;
 
+    /**
+     * The constant COLLUMS.
+     */
+    public static final int COLLUMS = 10;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
         HBox center = new HBox();
 
-        int  width = 300;
-        int heigh = 50;
         Scene scene = new Scene(center, width, heigh);
         primaryStage.setScene(scene);
         primaryStage.show();
