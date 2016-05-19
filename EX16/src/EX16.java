@@ -2,9 +2,19 @@
  * Created by Max Ross on 5/15/2016 7:39 PM.
  */
 public class EX16 {
+    /**
+     * The constant N.
+     */
     public static final int N = 9;
+    /**
+     * The constant E.
+     */
     public static final int E = 8;
+    /**
+     * The constant T.
+     */
     public static final int T = 10;
+
     /**
      * Count 98 int.
      *
