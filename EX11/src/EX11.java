@@ -43,7 +43,7 @@ public class EX11 extends Application {
 
         TextField name = new TextField();
         name.setPromptText("Enter your first name.");
-        name.setPrefColumnCount(10);
+        name.setPrefColumnCount(COLLUMS);
         name.getText();
         //GridPane.setConstraints(name, 0, 0);
         center.getChildren().add(name);
