@@ -11,10 +11,20 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+
 /**
  * The type Ex 11.
  */
 public class EX11 extends Application {
+
+    /**
+     * The constant HEIGHT.
+     */
+    public static final int HEIGHT = 50;
+    /**
+     * The constant WIDTH.
+     */
+    public static final int WIDTH = 300;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
