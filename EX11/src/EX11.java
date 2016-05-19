@@ -21,7 +21,9 @@ public class EX11 extends Application {
 
         HBox center = new HBox();
 
-        Scene scene = new Scene(center, 300, 50);
+        int  width = 300;
+        int heigh = 50;
+        Scene scene = new Scene(center, width, heigh);
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setResizable(true);
