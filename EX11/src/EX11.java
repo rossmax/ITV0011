@@ -31,7 +31,7 @@ public class EX11 extends Application {
         primaryStage.setResizable(true);
 
         /*GridPane grid = new GridPane();
-        grid.setPadding(new Insets(10, 10, 10, 10));
+        griid.setPadding(new Insets(10, 10, 10, 10));
         grid.setVgap(5);
         grid.setHgap(5);*/
 
