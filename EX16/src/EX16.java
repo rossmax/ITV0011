@@ -70,7 +70,7 @@ public class EX16 {
         int result;
         int on;
         int length = (int) (Math.log10(n) + 1);
-        int digit = Integer.parseInt(Integer.toString(n).substring(0,1));
+        int digit = Integer.parseInt(Integer.toString(n).substring(0, 1));
         int determinant = digit * T;
 
         if (digit == N || digit == E) {
