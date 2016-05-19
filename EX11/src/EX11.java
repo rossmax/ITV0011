@@ -11,6 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+/**
+ * The type Ex 11.
+ */
 public class EX11 extends Application {
 
     @Override
@@ -57,6 +60,11 @@ public class EX11 extends Application {
 
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }
