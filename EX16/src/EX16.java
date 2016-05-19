@@ -44,7 +44,7 @@ public class EX16 {
      * @return the int
      */
     public static int count98Harder(int n) {
-        //IMPLEMENTATION HERE
+        //IMPLEMENTAAATION HERE
         if (n == 0 || n < 0) {
             return 0;
         }
@@ -52,10 +52,10 @@ public class EX16 {
         int result;
         int on;
         int length = (int)(Math.log10(n)+1);
-        int Digit = Integer.parseInt(Integer.toString(n).substring(0,1));
-        int determinant = Digit * 10;
+        int digit = Integer.parseInt(Integer.toString(n).substring(0,1));
+        int determinant = digit * 10;
 
-        if (Digit == 9 || Digit == 8) {
+        if (digit == 9 || digit == 8) {
             on = 1;
             if (length >= 3) {
                 int firstDigit = Integer.parseInt(Integer.toString(n).substring(0,1));
@@ -86,7 +86,7 @@ public class EX16 {
      */
     public static void main(String[] args) {
         System.out.println(count98(0));
-        System.out.println(count98(90818)); // => 3
+        System.out.println(count98(999800818)); // => 3
         System.out.println(count98Harder(90818)); // => 5
         //TEST YOUR IMPLEMENTATION HERE
     }
