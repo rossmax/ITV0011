@@ -14,6 +14,8 @@ public class EX19 {
             String test = "Koeratoit toidukoeratäpp toidukoor kalamaja TäpikKoer koe";
             int[] result = testDog(test);
             System.out.println(Arrays.toString(testDog(test)));
+            System.out.println(Arrays.toString(testDog("koerkoerkoerkoer")));
+            System.out.println(Arrays.toString(testDog("koerKoerkoerkoer")));
             System.out.println(Arrays.toString(testDog("")));
             System.out.println(Arrays.toString(testDog(null)));
             System.out.println(Arrays.toString(testDog("0")));
@@ -80,8 +82,8 @@ public class EX19 {
             return "";
         }
 
-        String res = null;
-            String result = "";
+        String res = "";
+        String result = "";
         char[] charArray;
 
             for (String part : text.split(" ")) {
