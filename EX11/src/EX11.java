@@ -20,20 +20,11 @@ public class EX11 extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         HBox center = new HBox();
-        /*container.setId("checkUpdatesBar");
-        container.setPrefSize(50, 50);
-        container.setMinSize(50, 50);
-        container.setMaxSize(200, 200);*/
 
         Scene scene = new Scene(center, 300, 50);
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setResizable(true);
-
-        /*GridPane grid = new GridPane();
-        griid.setPadding(new Insets(10, 10, 10, 10));
-        grid.setVgap(5);
-        grid.setHgap(5);*/
 
         TextField name = new TextField();
         name.setPromptText("Enter your first name.");
